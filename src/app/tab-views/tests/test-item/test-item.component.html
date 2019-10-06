@@ -1,0 +1,8 @@
+<div class="card">
+  <div class="card-body">
+    <h4 class="card-title">{{ testItem.question }}</h4>
+    <ul class="list-group">
+      <li *ngFor="let answer of testItem.answers;" class="list-group-item" [style.backgroundColor]="getAnswerItemColor(answer.id)" e><input type="radio" [attr.name]="testItem.id" [attr.value]="answer.id" (change)="setSelectedAnswer($event)">{{ answer.value }}</li>
+    </ul>
+  </div>
+</div>

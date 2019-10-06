@@ -1,0 +1,22 @@
+<div class="container--main">
+  <ul class="nav nav-tabs fixed-top">
+    <li class="nav-item">
+      <a class="nav-link" (click)="setActiveTheoryTab()" [class.active]="theoryTabIsActive">Теоретическая часть</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" (click)="setActiveTestsTab()" [class.active]="testsTabIsActive">Тестирование</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" (click)="setActiveAssessmentTab()" [class.active]="assessmentTabIsActive">Автоматизированная оценка</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" (click)="setActiveAdministrationTab()" [class.active]="administrationTabIsActive">Администрирование</a>
+    </li>
+  </ul>
+
+  <app-theory [hidden]="!theoryTabIsActive"></app-theory>
+  <app-tests [hidden]="!testsTabIsActive"></app-tests>
+  <app-assessment [hidden]="!assessmentTabIsActive"></app-assessment>
+  <app-administration [hidden]="!administrationTabIsActive"></app-administration>
+
+</div>

@@ -1,0 +1,35 @@
+<div class="container">
+  <div class="row">
+    <div class="col-4">
+
+      <div class="card">
+        <div class="card-header">Тестирование</div>
+        <div class="card-body">
+          <a [routerLink]="[{outlets: {adminOutlet: ['testEdit']}}]" class="btn btn-link">Редактировать</a>
+          <a [routerLink]="[{outlets: {adminOutlet: ['testResults']}}]" class="btn btn-link">Просмотреть результаты</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-4">
+      <div class="card">
+        <div class="card-header">База данных</div>
+        <div class="card-body">
+          <a [routerLink]="[{outlets: {adminOutlet: ['buildsDbEdit']}}]" class="btn btn-link">Редактировать сооружения</a>
+          <a [routerLink]="[{outlets: {adminOutlet: ['referenceDbEdit']}}]" class="btn btn-link">Редактировать справочные данные</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-4">
+      <div class="card">
+        <div class="card-header">Пользователи</div>
+        <div class="card-body">
+          <a [routerLink]="[{outlets: {adminOutlet: ['usersPage']}}]" class="btn btn-link">Список пользователей</a>
+        </div>
+      </div>
+    </div>
+    </div>
+
+
+</div>

@@ -1,0 +1,13 @@
+<div id="map" style="width:100%; height:100%; position: relative;">
+  <span class="toggle-button" [class.button-open]="showMenu" (click)="toggleMenu()">
+     <div class="menu-bar menu-bar-top"></div>
+     <div class="menu-bar menu-bar-middle"></div>
+     <div class="menu-bar menu-bar-bottom"></div>
+  </span>
+
+  <div class="menu-wrap" [class.menu-show]="showMenu">
+    <div class="menu-sidebar">
+      <ng-content></ng-content>
+    </div>
+  </div>
+</div>

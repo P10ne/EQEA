@@ -1,0 +1,12 @@
+<div *ngIf="testEnd" class="d-flex flex-column align-items-center">
+  <h3>Ваш результат:</h3>
+  <span> {{testResults}}% </span>
+</div>
+<div *ngIf="hasTestItems" class="container">
+  <app-test-item *ngFor="let testItem of testItems" [testItem]="testItem" [showAnswers]="showAnswers"></app-test-item>
+
+  <div *ngIf="!testEnd" class="container d-flex justify-content-end">
+    <button class="btn btn-primary" (click)="sendBtnClickHandler()">Отправить</button>
+  </div>
+</div>
+<app-back-btn></app-back-btn>
