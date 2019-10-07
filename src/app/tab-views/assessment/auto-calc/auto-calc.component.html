@@ -1,3 +1,4 @@
+<div id="map" style="width:100%; height:100%; position: relative;">
 <app-side-nav>
   <h5>Эпицентр</h5>
   <div class="form-group">
@@ -65,72 +66,5 @@
     <button class="btn" (click)="reset()">Сбросить все</button>
   </div>
 </app-side-nav>
+</div>
 <app-back-btn></app-back-btn>
-
-<!--
-<h5>Эпицентр</h5>
-<div class="form-group">
-  <label for="usr">Глубина (км):</label>
-  <input [(ngModel)]="depth" type="number" class="form-control form-control-sm" id="usr">
-</div>
-
-<div class="form-group">
-  <label for="pwd">Магнитуда (М):</label>
-  <input [(ngModel)]="magnitude" type="number" class="form-control form-control-sm" id="pwd">
-</div>
-<div class="container d-flex justify-content-end">
-  <button class="btn btn-primary btn-sm" (click)="selectEpicenterBtnHandler()">Отметить на карте</button>
-</div>
-<hr/>
-<h5>Слои</h5>
-
-<div class="accordion">
-  <div class="tab">
-    <input class="input--title" type="checkbox" id="tab1" name="tab-group">
-    <label for="tab1" class="tab-title">Изо-данные</label>
-    <section class="tab-content">
-      <div class="form-check">
-        <label class="form-check-label">
-          <input type="checkbox" class="form-check-input" value="" checked [attr.data-source-name-val]="1" (change)="layerCheckboxChangeHandler($event)"> Изосейсты
-        </label>
-      </div>
-      <div class="form-check">
-        <label class="form-check-label">
-          <input type="checkbox" class="form-check-input" value="" checked [attr.data-source-name-val]="2" (change)="layerCheckboxChangeHandler($event)"> Зоны бальности
-        </label>
-      </div>
-      <div class="form-check">
-        <label class="form-check-label">
-          <input type="checkbox" class="form-check-input" value="" checked [attr.data-source-name-val]="3" (change)="layerCheckboxChangeHandler($event)"> Эпицентр
-        </label>
-      </div>
-    </section>
-  </div>
-  <div class="tab">
-    <input  class="input--title" type="checkbox" id="tab2" name="tab-group">
-    <label for="tab2" class="tab-title">Сооружения</label>
-    <section class="tab-content">
-      <div class="form-check">
-        <label class="form-check-label">
-          <input type="checkbox" checked class="form-check-input"> Жилые, общественные, промышленные
-        </label>
-      </div>
-      <div class="form-check">
-        <label class="form-check-label">
-          <input type="checkbox" checked class="form-check-input"> Гаражи
-        </label>
-      </div>
-      <div class="form-check">
-        <label class="form-check-label">
-          <input type="checkbox" checked class="form-check-input"> Убежища
-        </label>
-      </div>
-    </section>
-  </div>
-</div>
-
-<hr/>
-<div class="container d-flex justify-content-end">
-  <button class="btn" (click)="reset()">Сбросить все</button>
-</div>
--->
