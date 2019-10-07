@@ -28,6 +28,8 @@ import { BuildsDbEditComponent } from './tab-views/administration/builds-db-edit
 import { ReferenceDbEditComponent } from './tab-views/administration/reference-db-edit/reference-db-edit.component';
 import { UsersPageComponent } from './tab-views/administration/users-page/users-page.component';
 import { SideNavComponent } from './components/side-nav/side-nav.component';
+import { ToolbarComponent } from './components/toolbar/toolbar.component';
+import { SideNavToggleComponent } from './components/side-nav-toggle/side-nav-toggle.component';
 
 const routes: Routes = [
   {path: '', component: MainAdministrationComponent, outlet: 'adminOutlet'},
@@ -44,7 +46,27 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  declarations: [AppComponent, TheoryComponent, TestsComponent, AssessmentComponent, AdministrationComponent, TestItemComponent, ExecTestsComponent, ViewTestsComponent, MainTestsComponent, BackBtnComponent, MainAdministrationComponent, SingleCalcComponent, AutoCalcComponent, TestResultsComponent, TestEditComponent, BuildsDbEditComponent, ReferenceDbEditComponent, UsersPageComponent, SideNavComponent],
+  declarations: [AppComponent,
+    TheoryComponent,
+    TestsComponent,
+    AssessmentComponent,
+    AdministrationComponent,
+    TestItemComponent,
+    ExecTestsComponent,
+    ViewTestsComponent,
+    MainTestsComponent,
+    BackBtnComponent,
+    MainAdministrationComponent,
+    SingleCalcComponent,
+    AutoCalcComponent,
+    TestResultsComponent,
+    TestEditComponent,
+    BuildsDbEditComponent,
+    ReferenceDbEditComponent,
+    UsersPageComponent,
+    SideNavComponent,
+    ToolbarComponent,
+    SideNavToggleComponent],
   imports: [
     BrowserModule,
     FormsModule,

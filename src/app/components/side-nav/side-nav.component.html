@@ -1,12 +1,5 @@
-
-  <span class="toggle-button" [class.button-open]="showMenu" (click)="toggleMenu()">
-     <div class="menu-bar menu-bar-top"></div>
-     <div class="menu-bar menu-bar-middle"></div>
-     <div class="menu-bar menu-bar-bottom"></div>
-  </span>
-
-  <div class="menu-wrap" [class.menu-show]="showMenu">
-    <div class="menu-sidebar">
-      <ng-content></ng-content>
-    </div>
+<div class="menu-wrap" [class.menu-show]="isOpen">
+  <div class="menu-sidebar">
+    <ng-content></ng-content>
   </div>
+</div>

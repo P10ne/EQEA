@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-side-nav',
@@ -7,13 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SideNavComponent implements OnInit {
 
-  showMenu: boolean;
+  @Input() isOpen = false;
   constructor() { }
 
   ngOnInit() {
   }
 
-  toggleMenu() {
-    this.showMenu = !this.showMenu;
-  }
 }

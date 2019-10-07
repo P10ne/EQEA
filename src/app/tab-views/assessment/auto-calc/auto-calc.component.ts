@@ -10,7 +10,7 @@ import {SourceNamesEnum} from '../enums/sourceNames.enum';
 })
 export class AutoCalcComponent implements OnInit {
 
-  showMenu = false;
+  sideNavIsOpen = false;
   magnitude = 0;
   depth = 0;
   constructor(
@@ -22,8 +22,8 @@ export class AutoCalcComponent implements OnInit {
     this.assessmentService.initMap();
   }
 
-  toggleMenu() {
-    this.showMenu = !this.showMenu;
+  setSideNavState(isOpen: boolean) {
+    this.sideNavIsOpen = isOpen;
   }
 
   selectEpicenterBtnHandler() {
@@ -34,7 +34,7 @@ export class AutoCalcComponent implements OnInit {
   }
 
   closeMenu() {
-    this.showMenu = false;
+    this.setSideNavState(false);
   }
 
   reset() {
