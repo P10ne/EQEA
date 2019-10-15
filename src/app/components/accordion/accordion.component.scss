@@ -1,0 +1,31 @@
+
+.tab .input--title, .tab-content { display: none; }
+.tab {
+  border: 1px solid #e9eaec; /* Параметры рамки */
+  border-radius: 3px; /* Скругляем уголки */
+  margin-bottom: 10px; /* Расстояние между пунктами */
+}
+.tab-title {
+  padding: 10px; /* Поля вокруг текста */
+  display: block; /* Блочный элемент */
+  text-transform: uppercase; /* Все буквы заглавные */
+  font-weight: bold; /* Жирное начертание */
+  cursor: pointer; /* Вид курсора */
+  margin-bottom: 0;
+}
+.tab-title::after {
+  content: '+'; /* Выводим плюс */
+  float: right; /* Размещаем по правому краю */
+}
+.tab-content {
+  padding: 10px 20px; /* Поля вокруг текста */
+}
+.tab :checked + .tab-title {
+  border-radius: 3px 3px 0 0; /* Скругляем уголки */
+}
+.tab :checked + .tab-title::after {
+  content: '−'; /* Выводим минус */
+}
+.tab :checked ~ .tab-content {
+  display: block; /* Показываем содержимое */
+}

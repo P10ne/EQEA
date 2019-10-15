@@ -30,6 +30,7 @@ import { UsersPageComponent } from './tab-views/administration/users-page/users-
 import { SideNavComponent } from './components/side-nav/side-nav.component';
 import { ToolbarComponent } from './components/toolbar/toolbar.component';
 import { SideNavToggleComponent } from './components/side-nav-toggle/side-nav-toggle.component';
+import { AccordionComponent } from './components/accordion/accordion.component';
 
 const routes: Routes = [
   {path: '', component: MainAdministrationComponent, outlet: 'adminOutlet'},
@@ -66,7 +67,9 @@ const routes: Routes = [
     UsersPageComponent,
     SideNavComponent,
     ToolbarComponent,
-    SideNavToggleComponent],
+    SideNavToggleComponent,
+    AccordionComponent
+  ],
   imports: [
     BrowserModule,
     FormsModule,

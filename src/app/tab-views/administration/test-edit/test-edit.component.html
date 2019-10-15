@@ -4,14 +4,28 @@
       <div class="card-header">Задания</div>
       <div class="card-body">
         <ul class="list-group">
-          <li class="list-group-item list-group-item-action border-0">Задание 1</li>
-          <li class="list-group-item list-group-item-action border-0">Задание 2</li>
-          <li class="list-group-item list-group-item-action border-0">Задание 3</li>
+          <li class="list-group-item list-group-item-action border-0 tasks__item-container">
+            <div class="tasks__item  d-flex justify-content-between align-items-center">
+              <span class="tasks__item-title">Задание 1</span>
+              <button class="btn text-danger">x</button>
+            </div>
+          </li>
+          <li class="list-group-item list-group-item-action border-0 tasks__item-container">
+            <div class="tasks__item  d-flex justify-content-between align-items-center">
+              <span class="tasks__item-title">Задание 2</span>
+              <button class="btn text-danger">x</button>
+            </div>
+          </li>
+          <li class="list-group-item list-group-item-action border-0 tasks__item-container">
+            <div class="tasks__item  d-flex justify-content-between align-items-center">
+              <span class="tasks__item-title">Задание 3</span>
+              <button class="btn text-danger">x</button>
+            </div>
+          </li>
         </ul>
       </div>
       <div class="card-footer d-flex justify-content-end">
-        <button class="btn">+</button>
-        <button class="btn">-</button>
+        <button class="btn btn-outline-primary">+</button>
       </div>
     </div>
   </div>
@@ -24,14 +38,37 @@
     <div class="form-group">
       <label for="comment">Варианты ответов:</label>
       <ul class="list-group border">
-        <li class="list-group-item list-group-item-action border-0">Ответ 1</li>
-        <li class="list-group-item list-group-item-action border-0">Ответ 2</li>
-        <li class="list-group-item list-group-item-action border-0">Ответ 3</li>
+        <li class="list-group-item list-group-item-action border-0 answers__item-container">
+          <div class="answers__item">
+            <span class="answers__title">Ответ 1</span>
+            <div class="answers__item-tools-container">
+              <button class="btn"><img class="answers__item-tools-edit-icon" src="../../../../assets/icons/edit_icon.svg"></button>
+              <button class="btn text-danger">x</button>
+            </div>
+          </div>
+        </li>
+        <li class="list-group-item list-group-item-action border-0 answers__item-container">
+          <div class="answers__item">
+            <span class="answers__title">Ответ 2</span>
+            <div class="answers__item-tools-container">
+              <button class="btn"><img class="answers__item-tools-edit-icon" src="../../../../assets/icons/edit_icon.svg"></button>
+              <button class="btn text-danger">x</button>
+            </div>
+          </div>
+        </li>
+        <li class="list-group-item list-group-item-action border-0 answers__item-container">
+          <div class="answers__item">
+            <span class="answers__title">Ответ 3</span>
+            <div class="answers__item-tools-container">
+              <button class="btn"><img class="answers__item-tools-edit-icon" src="../../../../assets/icons/edit_icon.svg"></button>
+              <button class="btn text-danger">x</button>
+            </div>
+          </div>
+        </li>
       </ul>
       <div class="row">
-        <div class="col-12 d-flex justify-content-end">
-          <button class="btn">+</button>
-          <button class="btn">-</button>
+        <div class="col-12 d-flex justify-content-end mt-2">
+          <button class="btn btn-outline-primary">+</button>
         </div>
       </div>
     </div>

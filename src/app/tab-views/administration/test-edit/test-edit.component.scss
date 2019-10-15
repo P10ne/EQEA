@@ -1,0 +1,24 @@
+.tasks {
+  &__item {
+    &-container {
+      padding: 5px 10px;
+    }
+  }
+}
+.answers {
+  &__item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &-tools {
+      &-edit-icon {
+        width: 15px;
+        height:  15px;
+      }
+    }
+    &-container {
+      padding: 5px 10px;
+    }
+  }
+}
