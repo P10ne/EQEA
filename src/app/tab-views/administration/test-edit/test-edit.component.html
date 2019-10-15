@@ -5,16 +5,10 @@
       <div class="card-body">
         <ul class="list-group">
           <li class="list-group-item list-group-item-action border-0 tasks__item-container">
-            <div class="tasks__item  d-flex justify-content-between align-items-center">
-              <span class="tasks__item-title">Задание 1</span>
-              <button class="btn text-danger">x</button>
-            </div>
+            <app-list-item [title]="'Задание 1'" [isDeletable]="true"></app-list-item>
           </li>
           <li class="list-group-item list-group-item-action border-0 tasks__item-container">
-            <div class="tasks__item  d-flex justify-content-between align-items-center">
-              <span class="tasks__item-title">Задание 2</span>
-              <button class="btn text-danger">x</button>
-            </div>
+            <app-list-item [title]="'Задание 2'" [isDeletable]="true"></app-list-item>
           </li>
           <li class="list-group-item list-group-item-action border-0 tasks__item-container">
             <div class="tasks__item  d-flex justify-content-between align-items-center">
@@ -39,31 +33,13 @@
       <label for="comment">Варианты ответов:</label>
       <ul class="list-group border">
         <li class="list-group-item list-group-item-action border-0 answers__item-container">
-          <div class="answers__item">
-            <span class="answers__title">Ответ 1</span>
-            <div class="answers__item-tools-container">
-              <button class="btn"><img class="answers__item-tools-edit-icon" src="../../../../assets/icons/edit_icon.svg"></button>
-              <button class="btn text-danger">x</button>
-            </div>
-          </div>
+          <app-list-item [title]="'Ответ 1'" [isDeletable]="true" [isEditable]="true"></app-list-item>
         </li>
         <li class="list-group-item list-group-item-action border-0 answers__item-container">
-          <div class="answers__item">
-            <span class="answers__title">Ответ 2</span>
-            <div class="answers__item-tools-container">
-              <button class="btn"><img class="answers__item-tools-edit-icon" src="../../../../assets/icons/edit_icon.svg"></button>
-              <button class="btn text-danger">x</button>
-            </div>
-          </div>
+          <app-list-item [title]="'Ответ 2'" [isDeletable]="true" [isEditable]="true"></app-list-item>
         </li>
         <li class="list-group-item list-group-item-action border-0 answers__item-container">
-          <div class="answers__item">
-            <span class="answers__title">Ответ 3</span>
-            <div class="answers__item-tools-container">
-              <button class="btn"><img class="answers__item-tools-edit-icon" src="../../../../assets/icons/edit_icon.svg"></button>
-              <button class="btn text-danger">x</button>
-            </div>
-          </div>
+          <app-list-item [title]="'Ответ 3'" [isDeletable]="true" [isEditable]="true"></app-list-item>
         </li>
       </ul>
       <div class="row">
@@ -76,4 +52,9 @@
 </div>
 
 
-<app-back-btn></app-back-btn>
+<app-toolbar>
+  <li class="toolbar__item">
+    <app-back-btn></app-back-btn>
+  </li>
+</app-toolbar>
+

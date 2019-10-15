@@ -31,6 +31,7 @@ import { SideNavComponent } from './components/side-nav/side-nav.component';
 import { ToolbarComponent } from './components/toolbar/toolbar.component';
 import { SideNavToggleComponent } from './components/side-nav-toggle/side-nav-toggle.component';
 import { AccordionComponent } from './components/accordion/accordion.component';
+import { ListItemComponent } from './components/list-item/list-item.component';
 
 const routes: Routes = [
   {path: '', component: MainAdministrationComponent, outlet: 'adminOutlet'},
@@ -68,7 +69,8 @@ const routes: Routes = [
     SideNavComponent,
     ToolbarComponent,
     SideNavToggleComponent,
-    AccordionComponent
+    AccordionComponent,
+    ListItemComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,7 @@
+<div class="list__item">
+  <span class="list__title">{{title}}</span>
+  <div class="list__item-tools-container">
+    <button *ngIf="isEditable" class="btn"><img class="list__item-tools-edit-icon" src="../../../../assets/icons/edit_icon.svg"></button>
+    <button *ngIf="isDeletable" class="btn text-danger">x</button>
+  </div>
+</div>
