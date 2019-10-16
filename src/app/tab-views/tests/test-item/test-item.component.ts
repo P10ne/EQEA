@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {TestsService} from '../services/tests.service';
+import {TestsService} from '../../../services/tests.service';
 import {TestItemInterface} from '../interfaces/test-item.interface';
 import {TestItemAnswerStateEnum} from '../enums/testItemAnswerState.enum';
 
@@ -23,13 +23,9 @@ export class TestItemComponent implements OnInit {
     }
   }
 
-
-
   getAnswerState(index: number): TestItemAnswerStateEnum {
     return this.testService.getAnswerState({questionId: this.testItem.id, answerId: this.selectedAnswerId}, index);
   }
-
-
 
   constructor(private testService: TestsService) { }
 
@@ -38,9 +34,7 @@ export class TestItemComponent implements OnInit {
 
   setSelectedAnswer(event: any) {
     this.selectedAnswerId = Number.parseInt(event.target.getAttribute('value'));
-    console.log(`Выбран ответ ${this.selectedAnswerId}`);
     this.testService.setSelectedAnswerId({questionId: this.testItem.id, answerId: this.selectedAnswerId});
   }
-
 
 }

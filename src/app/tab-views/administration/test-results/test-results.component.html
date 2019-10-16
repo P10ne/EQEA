@@ -1,4 +1,4 @@
-<div class="row">
+<div class="row container--mt-toolbar">
   <div class="col-4">
     <div class="card">
       <div class="card-header">Студенты</div>
@@ -21,37 +21,12 @@
     </div>
   </div>
   <div class="col-8">
-    <div class="card">
-      <div class="card-header">Результаты</div>
-      <div class="card-body">
-        <table class="table table-borderless table-striped">
-          <thead>
-          <tr>
-            <th>Дата</th>
-            <th>Оценка (%)</th>
-          </tr>
-          </thead>
-          <tbody>
-          <tr>
-            <td>2019/03/14 20:34:09</td>
-            <td>50</td>
-          </tr>
-          <tr>
-            <td>2019/03/14 20:34:09</td>
-            <td>50</td>
-          </tr>
-          <tr>
-            <td>2019/03/14 20:34:09</td>
-            <td>50</td>
-          </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
+    <app-test-results-table [results]="[{date: '2019/03/14 20:34:09', result: 50}, {date: '2019/01/14 20:39:09', result: 40}]">
+    </app-test-results-table>
   </div>
 </div>
 
-<app-toolbar>
+<app-toolbar [title]="'Результаты тестов'">
   <li class="toolbar__item">
     <app-back-btn></app-back-btn>
   </li>

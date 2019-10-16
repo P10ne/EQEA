@@ -58,7 +58,7 @@
   </div>
 </app-side-nav>
 
-<app-toolbar>
+<app-toolbar [title]="'Расчет по карте'">
   <li class="toolbar__item">
     <app-side-nav-toggle (sideNavOpenEmitter)="setSideNavState($event)"></app-side-nav-toggle>
   </li>

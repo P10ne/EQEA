@@ -1,20 +1,26 @@
-<div class="row">
+<div class="row container--mt-toolbar">
   <div class="col-4">
     <div class="card">
       <div class="card-header">Задания</div>
       <div class="card-body">
         <ul class="list-group">
           <li class="list-group-item list-group-item-action border-0 tasks__item-container">
-            <app-list-item [title]="'Задание 1'" [isDeletable]="true"></app-list-item>
+            <app-list-item
+              [title]="'Задание 1'"
+              [isDeletable]="true">
+            </app-list-item>
           </li>
           <li class="list-group-item list-group-item-action border-0 tasks__item-container">
-            <app-list-item [title]="'Задание 2'" [isDeletable]="true"></app-list-item>
+            <app-list-item
+              [title]="'Задание 2'"
+              [isDeletable]="true">
+            </app-list-item>
           </li>
           <li class="list-group-item list-group-item-action border-0 tasks__item-container">
-            <div class="tasks__item  d-flex justify-content-between align-items-center">
-              <span class="tasks__item-title">Задание 3</span>
-              <button class="btn text-danger">x</button>
-            </div>
+            <app-list-item
+              [title]="'Задание 3'"
+              [isDeletable]="true">
+            </app-list-item>
           </li>
         </ul>
       </div>
@@ -27,19 +33,30 @@
   <div class="col-8">
     <div class="form-group">
       <label for="comment">Постановка:</label>
-      <textarea class="form-control" rows="2  " id="comment"></textarea>
+      <textarea class="form-control" rows="2" id="comment"></textarea>
     </div>
     <div class="form-group">
       <label for="comment">Варианты ответов:</label>
       <ul class="list-group border">
         <li class="list-group-item list-group-item-action border-0 answers__item-container">
-          <app-list-item [title]="'Ответ 1'" [isDeletable]="true" [isEditable]="true"></app-list-item>
+          <app-editable-test-list-item
+            [title]="'Ответ 1'">
+          </app-editable-test-list-item>
         </li>
         <li class="list-group-item list-group-item-action border-0 answers__item-container">
-          <app-list-item [title]="'Ответ 2'" [isDeletable]="true" [isEditable]="true"></app-list-item>
+          <app-editable-test-list-item
+            [title]="'Ответ 2'">
+          </app-editable-test-list-item>
         </li>
         <li class="list-group-item list-group-item-action border-0 answers__item-container">
-          <app-list-item [title]="'Ответ 3'" [isDeletable]="true" [isEditable]="true"></app-list-item>
+          <app-editable-test-list-item
+            [title]="'Ответ 3'">
+          </app-editable-test-list-item>
+        </li>
+        <li class="list-group-item list-group-item-action border-0 answers__item-container">
+          <app-editable-test-list-item
+            [title]="'Ответ 4'">
+          </app-editable-test-list-item>
         </li>
       </ul>
       <div class="row">
@@ -52,7 +69,7 @@
 </div>
 
 
-<app-toolbar>
+<app-toolbar [title]="'Редактирование тестов'">
   <li class="toolbar__item">
     <app-back-btn></app-back-btn>
   </li>

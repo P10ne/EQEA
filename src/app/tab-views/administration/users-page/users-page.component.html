@@ -1,7 +1,4 @@
-<div class="row">
-  <h3>Пользователи системы</h3>
-</div>
-<div class="row">
+<div class="row container--mt-toolbar">
   <div class="col-6">
     <div class="accordion">
       <app-accordion [title]="'Студенты'" [id]="'usersPageTab__students'">
@@ -12,13 +9,13 @@
             </div>
             <ul class="list-group">
               <li class="list-group-item list-group-item-action border-0">
-                <app-list-item [title]="'Иванов Иван Иванович'"></app-list-item>
+                <app-list-item [title]="'Иванов Иван Иванович'" [isDeletable]="true"></app-list-item>
               </li>
               <li class="list-group-item list-group-item-action border-0">
-                <app-list-item [title]="'Иванов Иван Иванович'"></app-list-item>
+                <app-list-item [title]="'Иванов Иван Иванович'" [isDeletable]="true"></app-list-item>
               </li>
               <li class="list-group-item list-group-item-action border-0">
-                <app-list-item [title]="'Иванов Иван Иванович'"></app-list-item>
+                <app-list-item [title]="'Иванов Иван Иванович'" [isDeletable]="true"></app-list-item>
               </li>
             </ul>
           </div>
@@ -32,13 +29,13 @@
             </div>
             <ul class="list-group">
               <li class="list-group-item list-group-item-action border-0">
-                <app-list-item [title]="'Иванов Иван Иванович'"></app-list-item>
+                <app-list-item [title]="'Иванов Иван Иванович'" [isDeletable]="true"></app-list-item>
               </li>
               <li class="list-group-item list-group-item-action border-0">
-                <app-list-item [title]="'Иванов Иван Иванович'"></app-list-item>
+                <app-list-item [title]="'Иванов Иван Иванович'" [isDeletable]="true"></app-list-item>
               </li>
               <li class="list-group-item list-group-item-action border-0">
-                <app-list-item [title]="'Иванов Иван Иванович'"></app-list-item>
+                <app-list-item [title]="'Иванов Иван Иванович'" [isDeletable]="true"></app-list-item>
               </li>
             </ul>
           </div>
@@ -49,7 +46,7 @@
 </div>
 
 
-<app-toolbar>
+<app-toolbar [title]="'Пользователи системы'">
   <li class="toolbar__item">
     <app-back-btn></app-back-btn>
   </li>

@@ -32,6 +32,9 @@ import { ToolbarComponent } from './components/toolbar/toolbar.component';
 import { SideNavToggleComponent } from './components/side-nav-toggle/side-nav-toggle.component';
 import { AccordionComponent } from './components/accordion/accordion.component';
 import { ListItemComponent } from './components/list-item/list-item.component';
+import { TestResultsTableComponent } from './components/test-results-table/test-results-table.component';
+import { SlideBtnComponent } from './components/slide-btn/slide-btn.component';
+import { EditableTestListItemComponent } from './components/editable-test-list-item/editable-test-list-item.component';
 
 const routes: Routes = [
   {path: '', component: MainAdministrationComponent, outlet: 'adminOutlet'},
@@ -70,7 +73,10 @@ const routes: Routes = [
     ToolbarComponent,
     SideNavToggleComponent,
     AccordionComponent,
-    ListItemComponent
+    ListItemComponent,
+    TestResultsTableComponent,
+    SlideBtnComponent,
+    EditableTestListItemComponent
   ],
   imports: [
     BrowserModule,

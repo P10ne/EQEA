@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
-import {TestItemInterface} from '../interfaces/test-item.interface';
-import {TestAnswerInterface} from '../interfaces/test-answer.interface';
-import {TestItemAnswerStateEnum} from '../enums/testItemAnswerState.enum';
+import {TestItemInterface} from '../tab-views/tests/interfaces/test-item.interface';
+import {TestAnswerInterface} from '../tab-views/tests/interfaces/test-answer.interface';
+import {TestItemAnswerStateEnum} from '../tab-views/tests/enums/testItemAnswerState.enum';
 
 @Injectable({
   providedIn: 'root'

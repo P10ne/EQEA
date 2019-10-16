@@ -3,21 +3,25 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    transition: all 0.2s;
 
     &-tools {
       &-container {
         padding: 0px 10px;
         display: flex;
       }
-      &-edit-icon {
+      &-icon {
         width: 15px;
         height:  15px;
+        &--edit {
+
+        }
+        &--isRight {
+          fill: #ddd;
+          &-active {
+            fill: #090;
+          }
+        }
       }
-    }
-    &--selected {
-      color: #007bff;
-      padding-left: 5px;
     }
   }
 }

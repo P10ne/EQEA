@@ -1,0 +1,19 @@
+<div class="card">
+  <div class="card-header">Результаты</div>
+  <div class="card-body">
+    <table class="table table-borderless table-striped">
+      <thead>
+      <tr>
+        <th>Дата</th>
+        <th>Оценка (%)</th>
+      </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let result of results">
+          <td>{{result.date}}</td>
+          <td>{{result.result}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

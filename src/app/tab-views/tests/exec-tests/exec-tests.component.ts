@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {TestsService} from '../services/tests.service';
+import {TestsService} from '../../../services/tests.service';
 
 @Component({
   selector: 'app-exec-tests',
@@ -24,16 +24,12 @@ export class ExecTestsComponent implements OnInit {
   }
 
   createTests() {
-    console.log('creating tests');
-    console.log(this.testsService.getAllTests());
     this.testItems = this.testsService.getRandomTestGroup(5);
   }
 
   sendBtnClickHandler() {
     this.testEnd = true;
     this.showAnswers = true;
-    console.log(`Результаты теста: ${this.testResults}`);
-    console.log(this.testsService.tests);
   }
 
 }

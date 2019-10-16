@@ -6,10 +6,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./test-edit.component.scss']
 })
 export class TestEditComponent implements OnInit {
-
   constructor() { }
 
   ngOnInit() {
+
+  }
+
+  editted(event) {
+    console.log(event);
   }
 
 }
