@@ -35,19 +35,32 @@ import { ListItemComponent } from './components/list-item/list-item.component';
 import { TestResultsTableComponent } from './components/test-results-table/test-results-table.component';
 import { SlideBtnComponent } from './components/slide-btn/slide-btn.component';
 import { EditableTestListItemComponent } from './components/editable-test-list-item/editable-test-list-item.component';
+import { MainComponent } from './windows/main/main.component';
+import { StatComponent } from './windows/stat/stat.component';
 
 const routes: Routes = [
-  {path: '', component: MainAdministrationComponent, outlet: 'adminOutlet'},
-  {path: 'testResults', component: TestResultsComponent, outlet: 'adminOutlet'},
-  {path: 'testEdit', component: TestEditComponent, outlet: 'adminOutlet'},
-  {path: 'buildsDbEdit', component: BuildsDbEditComponent, outlet: 'adminOutlet'},
-  {path: 'referenceDbEdit', component: ReferenceDbEditComponent, outlet: 'adminOutlet'},
-  {path: 'usersPage', component: UsersPageComponent, outlet: 'adminOutlet'},
-  {path: '', component: MainTestsComponent, outlet: 'testOutlet'},
-  {path: 'exectests', component: ExecTestsComponent, outlet: 'testOutlet'},
-  {path: 'viewtests', component: ViewTestsComponent, outlet: 'testOutlet'},
-  {path: '', component: SingleCalcComponent, outlet: 'assessmentOutlet'},
-  {path: 'autoCalc', component: AutoCalcComponent, outlet: 'assessmentOutlet'},
+  {
+    path: '', redirectTo: 'main', pathMatch: 'full'
+  },
+  {
+    path: 'main', component: MainComponent,
+    children: [
+      {path: '', component: MainAdministrationComponent, outlet: 'adminOutlet'},
+      {path: 'testResults', component: TestResultsComponent, outlet: 'adminOutlet'},
+      {path: 'testEdit', component: TestEditComponent, outlet: 'adminOutlet'},
+      {path: 'buildsDbEdit', component: BuildsDbEditComponent, outlet: 'adminOutlet'},
+      {path: 'referenceDbEdit', component: ReferenceDbEditComponent, outlet: 'adminOutlet'},
+      {path: 'usersPage', component: UsersPageComponent, outlet: 'adminOutlet'},
+      {path: '', component: MainTestsComponent, outlet: 'testOutlet'},
+      {path: 'exectests', component: ExecTestsComponent, outlet: 'testOutlet'},
+      {path: 'viewtests', component: ViewTestsComponent, outlet: 'testOutlet'},
+      {path: '', component: SingleCalcComponent, outlet: 'assessmentOutlet'},
+      {path: 'autoCalc', component: AutoCalcComponent, outlet: 'assessmentOutlet'}
+    ]
+  },
+  {
+    path: 'stat', component: StatComponent
+  }
 ];
 
 @NgModule({
@@ -76,7 +89,9 @@ const routes: Routes = [
     ListItemComponent,
     TestResultsTableComponent,
     SlideBtnComponent,
-    EditableTestListItemComponent
+    EditableTestListItemComponent,
+    MainComponent,
+    StatComponent
   ],
   imports: [
     BrowserModule,
