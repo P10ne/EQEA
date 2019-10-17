@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {MapService} from '../../../services/map/map.service';
 import {MathService} from '../services/math.service';
 import {SourceNamesEnum} from '../enums/sourceNames.enum';
+import {ElectronService} from '../../../core/services';
 
 @Component({
   selector: 'app-auto-calc',
@@ -14,6 +15,7 @@ export class AutoCalcComponent implements OnInit {
   magnitude = 0;
   depth = 0;
   constructor(
+    private electronService: ElectronService,
     private assessmentService: MapService,
     private math: MathService
   ) { }
@@ -53,4 +55,7 @@ export class AutoCalcComponent implements OnInit {
     this.assessmentService.setLayerVisibleState(layer, state);
   }
 
+  openStat() {
+    this.electronService.ipcRenderer.send('openStat');
+  }
 }

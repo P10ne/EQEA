@@ -36,7 +36,8 @@ import { TestResultsTableComponent } from './components/test-results-table/test-
 import { SlideBtnComponent } from './components/slide-btn/slide-btn.component';
 import { EditableTestListItemComponent } from './components/editable-test-list-item/editable-test-list-item.component';
 import { MainComponent } from './windows/main/main.component';
-import { StatComponent } from './windows/stat/stat.component';
+import { StatLayoutComponent } from './windows/stat/stat-layout.component';
+import { StatComponent } from './windows/stat/stat/stat.component';
 
 const testsRoutes = [
   {path: '', component: MainTestsComponent, outlet: 'testOutlet'},
@@ -56,6 +57,10 @@ const assessmentRoutes = [
   {path: 'autoCalc', component: AutoCalcComponent, outlet: 'assessmentOutlet'}
 ];
 
+const statRoutes = [
+  {path: '', component: StatComponent, outlet: 'statOutlet'}
+];
+
 const routes: Routes = [
   {
     path: '', redirectTo: 'main', pathMatch: 'full'
@@ -69,7 +74,10 @@ const routes: Routes = [
     ]
   },
   {
-    path: 'stat', component: StatComponent
+    path: 'stat', component: StatLayoutComponent,
+    children: [
+      ...statRoutes
+    ]
   }
 ];
 
@@ -101,6 +109,7 @@ const routes: Routes = [
     SlideBtnComponent,
     EditableTestListItemComponent,
     MainComponent,
+    StatLayoutComponent,
     StatComponent
   ],
   imports: [

@@ -1,18 +1,18 @@
-import { app, BrowserWindow, screen } from 'electron';
+import { app, BrowserWindow, screen, Menu, MenuItem, webContents } from 'electron';
 import * as path from 'path';
 import * as url from 'url';
-import * as electron from 'electron';
 
-let win, serve;
+import ElStatService from './electronbackend/stat.service';
+
+let mainWin, serve;
 const args = process.argv.slice(1);
 serve = args.some(val => val === '--serve');
 
 function createWindow() {
-
   const electronScreen = screen;
   const size = electronScreen.getPrimaryDisplay().workAreaSize;
 
-  win = new BrowserWindow({
+  mainWin = new BrowserWindow({
     x: 0,
     y: 0,
     width: size.width,
@@ -23,15 +23,15 @@ function createWindow() {
     title: 'Расчет последствий землетрясения'
   });
 
-  win.removeMenu();
+  mainWin.removeMenu();
 
   if (serve) {
     require('electron-reload')(__dirname, {
       electron: require(`${__dirname}/node_modules/electron`)
     });
-    win.loadURL('http://localhost:4200');
+    mainWin.loadURL('http://localhost:4200');
   } else {
-    win.loadURL(url.format({
+    mainWin.loadURL(url.format({
       pathname: path.join(__dirname, 'dist/index.html'),
       protocol: 'file:',
       slashes: true
@@ -39,11 +39,11 @@ function createWindow() {
   }
 
   if (serve) {
-    win.webContents.openDevTools();
+    mainWin.webContents.openDevTools();
   }
 
-  win.on('closed', () => {
-    win = null;
+  mainWin.on('closed', () => {
+    mainWin = null;
   });
 }
 
@@ -58,30 +58,18 @@ try {
   });
 
   app.on('activate', () => {
-    if (win === null) {
+    if (mainWin === null) {
       createWindow();
     }
   });
 
+  init();
 
-/*
-  electron.ipcMain.on('myopen', () => {
-    const newWin = new BrowserWindow({
-      x: 0,
-      y: 0,
-      width: 400,
-      height: 400,
-      webPreferences: {
-        nodeIntegration: true,
-      },
-    });
-    newWin.loadURL(url.format({
-      pathname: path.join(__dirname, 'dist/index.html'),
-      protocol: 'file:',
-      slashes: true
-    }));
-  });
-*/
 } catch (e) {
 
+}
+
+function init() {
+  const statService = new ElStatService();
+  statService.init();
 }
