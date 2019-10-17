@@ -44,10 +44,10 @@ const routes: Routes = [
   {path: 'referenceDbEdit', component: ReferenceDbEditComponent, outlet: 'adminOutlet'},
   {path: 'usersPage', component: UsersPageComponent, outlet: 'adminOutlet'},
   {path: '', component: MainTestsComponent, outlet: 'testOutlet'},
-  {path: '', component: SingleCalcComponent, outlet: 'assessmentOutlet'},
-  {path: 'autoCalc', component: AutoCalcComponent, outlet: 'assessmentOutlet'},
   {path: 'exectests', component: ExecTestsComponent, outlet: 'testOutlet'},
   {path: 'viewtests', component: ViewTestsComponent, outlet: 'testOutlet'},
+  {path: '', component: SingleCalcComponent, outlet: 'assessmentOutlet'},
+  {path: 'autoCalc', component: AutoCalcComponent, outlet: 'assessmentOutlet'},
 ];
 
 @NgModule({

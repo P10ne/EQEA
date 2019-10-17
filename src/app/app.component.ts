@@ -1,6 +1,4 @@
 import { Component } from '@angular/core';
-import { ElectronService } from './core/services';
-import { AppConfig } from '../environments/environment';
 
 @Component({
   selector: 'app-root',
@@ -8,6 +6,7 @@ import { AppConfig } from '../environments/environment';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+
   tabs = {
     theoryTab: {active: true},
     testsTab: {active: false},

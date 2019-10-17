@@ -20,6 +20,7 @@ function createWindow() {
     webPreferences: {
       nodeIntegration: true,
     },
+    title: 'Расчет последствий землетрясения'
   });
 
   win.removeMenu();

@@ -2,7 +2,15 @@
   <span *ngIf="!editing" class="list__title">{{title}}</span>
   <input *ngIf="editing" [(ngModel)]="title" #editInput (blur)="edited()" type="text" class="form-control">
   <div class="list__item-tools-container">
-    <button *ngIf="isEditable && !editing" (click)="onEditing()" class="btn btn-sm"><img class="list__item-tools-edit-icon" src="../../../../assets/icons/edit_icon.svg"></button>
-    <button *ngIf="isDeletable" (click)="deleted($event)" class="btn btn-sm text-danger">x</button>
+    <button *ngIf="isEditable && !editing" (click)="onEditing()" class="btn btn-sm">
+      <svg class="list__item-tools-icon list__item-tools-icon--edit">
+        <use xlink:href="editIcon"></use>
+      </svg>
+    </button>
+    <button *ngIf="isDeletable" (click)="deleted($event)" class="btn btn-sm text-danger">
+      <svg class="list__item-tools-icon list__item-tools-icon--delete">
+        <use xlink:href="#delIcon"></use>
+      </svg>
+    </button>
   </div>
 </div>

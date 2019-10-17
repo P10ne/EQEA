@@ -6,7 +6,15 @@
       <svg class="list__item-tools-icon list__item-tools-icon--isRight" [class.list__item-tools-icon--isRight-active]="isRight">
         <use xlink:href="#testAnwerRight"></use>
       </svg></button>
-    <button *ngIf="!editing" (click)="onEditing()" class="btn btn-sm"><img class="list__item-tools-icon list__item-tools-icon--edit" src="../../../../assets/icons/edit_icon.svg"></button>
-    <button (click)="deleted($event)" class="btn btn-sm text-danger">x</button>
+    <button *ngIf="!editing" (click)="onEditing()" class="btn btn-sm">
+      <svg class="list__item-tools-icon list__item-tools-icon--edit">
+        <use xlink:href="#editIcon"></use>
+      </svg>
+    </button>
+    <button (click)="deleted($event)" class="btn btn-sm text-danger">
+      <svg class="list__item-tools-icon list__item-tools-icon--delete">
+        <use xlink:href="#delIcon"></use>
+      </svg>
+    </button>
   </div>
 </div>
