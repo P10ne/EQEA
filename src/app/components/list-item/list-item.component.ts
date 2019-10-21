@@ -26,13 +26,13 @@ export class ListItemComponent implements OnInit {
   ngOnInit() {
   }
 
-  selected() {
+  onSelected() {
     if (this.isSelectable) {
       this.selectEmitter.emit(this.id);
     }
   }
 
-  deleted(event) {
+  onDeleted(event) {
     event.stopPropagation();
     this.deleteEmitter.emit(this.id);
   }
@@ -44,7 +44,7 @@ export class ListItemComponent implements OnInit {
     }, 0);
   }
 
-  edited() {
+  onEdited() {
     this.editing = false;
     this.editEmitter.emit({ id: this.id, newTitle: this.title });
   }

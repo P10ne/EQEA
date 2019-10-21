@@ -1,6 +1,6 @@
-<div class="list__item" (click)="selected()">
+<div class="list__item" (click)="onSelected()">
   <span *ngIf="!editing" class="list__title">{{title}}</span>
-  <input *ngIf="editing" [(ngModel)]="title" #editInput (blur)="edited()" type="text" class="form-control">
+  <input *ngIf="editing" [(ngModel)]="title" #editInput (blur)="onEdited()" type="text" class="form-control">
   <div class="list__item-tools-container">
     <button (click)="setRight()" class="btn btn-sm" [class.isRight]="isRight">
       <svg class="list__item-tools-icon list__item-tools-icon--isRight" [class.list__item-tools-icon--isRight-active]="isRight">
@@ -11,7 +11,7 @@
         <use xlink:href="#editIcon"></use>
       </svg>
     </button>
-    <button (click)="deleted($event)" class="btn btn-sm text-danger">
+    <button (click)="onDeleted($event)" class="btn btn-sm text-danger">
       <svg class="list__item-tools-icon list__item-tools-icon--delete">
         <use xlink:href="#delIcon"></use>
       </svg>

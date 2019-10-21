@@ -21,7 +21,10 @@
     </div>
   </div>
   <div class="col-8">
-    <app-test-results-table [results]="[{date: '2019/03/14 20:34:09', result: 50}, {date: '2019/01/14 20:39:09', result: 40}]">
+    <app-test-results-table
+      [title]="'Результаты'"
+      [columns]="['Дата', 'Результат (%)']"
+      [data]="[{date: '2019/03/14 20:34:09', result: 50}, {date: '2019/01/14 20:39:09', result: 40}]">
     </app-test-results-table>
   </div>
 </div>

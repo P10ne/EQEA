@@ -1,0 +1,17 @@
+<div class="card">
+  <div class="card-header">{{title}}</div>
+  <div class="card-body">
+    <table class="table table-borderless table-striped">
+      <thead>
+      <tr>
+        <th *ngFor="let column of columns" >{{column}}</th>
+      </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let row of data">
+          <td *ngFor="let key of rowKeys">{{row[key]}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

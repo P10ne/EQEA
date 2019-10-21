@@ -32,12 +32,13 @@ import { ToolbarComponent } from './components/toolbar/toolbar.component';
 import { SideNavToggleComponent } from './components/side-nav-toggle/side-nav-toggle.component';
 import { AccordionComponent } from './components/accordion/accordion.component';
 import { ListItemComponent } from './components/list-item/list-item.component';
-import { TestResultsTableComponent } from './components/test-results-table/test-results-table.component';
+import { TableComponent } from './components/table/table.component';
 import { SlideBtnComponent } from './components/slide-btn/slide-btn.component';
 import { EditableTestListItemComponent } from './components/editable-test-list-item/editable-test-list-item.component';
 import { MainComponent } from './windows/main/main.component';
 import { StatLayoutComponent } from './windows/stat/stat-layout.component';
 import { StatComponent } from './windows/stat/stat/stat.component';
+import { ListComponent } from './components/list/list.component';
 
 const testsRoutes = [
   {path: '', component: MainTestsComponent, outlet: 'testOutlet'},
@@ -105,12 +106,13 @@ const routes: Routes = [
     SideNavToggleComponent,
     AccordionComponent,
     ListItemComponent,
-    TestResultsTableComponent,
+    TableComponent,
     SlideBtnComponent,
     EditableTestListItemComponent,
     MainComponent,
     StatLayoutComponent,
-    StatComponent
+    StatComponent,
+    ListComponent
   ],
   imports: [
     BrowserModule,
