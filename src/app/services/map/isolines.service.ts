@@ -4,9 +4,7 @@ import * as Turf from '@turf/turf';
 import {GeoJSON} from 'ol/format';
 
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class IsolinesService {
 
   format;

@@ -14,9 +14,7 @@ import {EpicenterService} from './epicenter.service';
 
 import {getIsoLineStyle} from './labels.styles';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class MapService {
   map: Map;
   layers;
@@ -33,7 +31,6 @@ export class MapService {
       new OSM() // Тайлы карт
     ];
 
-    // В соответствии с sources
     this.layers = [
       new TileLayer({ source: this.sources[0] })
     ];
@@ -55,7 +52,6 @@ export class MapService {
 
   setEpicenter = (event) => {
     this.map.removeEventListener('click', this.setEpicenter);
-    this.reset();
     this.epicenterSeted.emit(transform(event.coordinate, 'EPSG:3857', 'EPSG:4326'));
   }
 
@@ -66,37 +62,4 @@ export class MapService {
     this.map.addLayer(vectorLayer);
     return {source: vectorSource, layer: vectorLayer};
   }
-
-  /*
-  createIsoLines() {
-    const isoLineFeatures = this.isoLinesService.getOLIsoLines({coords: this.epicenterService.getCurrentCoords(), depth: 0, magnitude: 0});
-    this.sources[SourceNamesEnum.isoLines].addFeatures(isoLineFeatures);
-  }
-
-  createIsoAreas() {
-    const isoAreaFeatures = this.isoAreasService.getOLIsoAreas({coords: this.epicenterService.getCurrentCoords(), depth: 0, magnitude: 0});
-    this.sources[SourceNamesEnum.isoAreas].addFeatures(isoAreaFeatures);
-  }
-  */
-
-  reset() {
-    this.resetEpicenter();
-    this.resetIsoLines();
-    this.resetIsoAreas();
-  }
-  resetEpicenter() {
-    // this.sources[SourceNamesEnum.epicenter].clear();
-  }
-  resetIsoLines() {
-   // this.sources[SourceNamesEnum.isoLines].clear();
-  }
-  resetIsoAreas() {
-   // this.sources[SourceNamesEnum.isoAreas].clear();
-  }
-
-  setLayerVisibleState(layer: number, state: boolean) {
-    this.layers[layer].setVisible(state);
-    this.layers[layer].changed();
-  }
-
 }

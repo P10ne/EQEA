@@ -12,7 +12,8 @@ import {getIsoLineStyle} from '../../../services/map/labels.styles';
 @Component({
   selector: 'app-auto-calc',
   templateUrl: './auto-calc.component.html',
-  styleUrls: ['./auto-calc.component.scss']
+  styleUrls: ['./auto-calc.component.scss'],
+  providers: [MapService, IsolinesService, IsoareasService, EpicenterService]
 })
 export class AutoCalcComponent implements OnInit {
 

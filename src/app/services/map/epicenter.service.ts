@@ -2,11 +2,8 @@ import { Injectable } from '@angular/core';
 import * as Turf from '@turf/turf';
 
 import {GeoJSON} from 'ol/format';
-import {transform} from 'ol/proj';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class EpicenterService {
   format;
   epicenter;
