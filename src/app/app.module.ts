@@ -33,7 +33,6 @@ import { SideNavToggleComponent } from './components/side-nav-toggle/side-nav-to
 import { AccordionComponent } from './components/accordion/accordion.component';
 import { ListItemComponent } from './components/list-item/list-item.component';
 import { TableComponent } from './components/table/table.component';
-import { SlideBtnComponent } from './components/slide-btn/slide-btn.component';
 import { EditableTestListItemComponent } from './components/editable-test-list-item/editable-test-list-item.component';
 import { MainComponent } from './windows/main/main.component';
 import { StatLayoutComponent } from './windows/stat/stat-layout.component';
@@ -108,7 +107,6 @@ const routes: Routes = [
     AccordionComponent,
     ListItemComponent,
     TableComponent,
-    SlideBtnComponent,
     EditableTestListItemComponent,
     MainComponent,
     StatLayoutComponent,

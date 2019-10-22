@@ -20,8 +20,7 @@ export class StatComponent implements OnInit {
     private assessmentService: MapService,
     private epicenterService: EpicenterService,
     private isoLinesService: IsolinesService,
-    private isoAreaService: IsoareasService,
-    private buildingsService: BuildingsService
+    private isoAreaService: IsoareasService
   ) {}
 
   ngOnInit() {
