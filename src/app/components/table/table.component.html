@@ -1,15 +1,15 @@
 <div class="card">
   <div class="card-header">{{title}}</div>
   <div class="card-body">
-    <table class="table table-borderless table-striped">
+    <table class="table table-borderless table-striped text-center">
       <thead>
       <tr>
-        <th *ngFor="let column of columns" >{{column}}</th>
+        <th *ngFor="let column of columns" >{{column.title}}</th>
       </tr>
       </thead>
       <tbody>
         <tr *ngFor="let row of data">
-          <td *ngFor="let key of rowKeys">{{row[key]}}</td>
+          <td *ngFor="let column of columns">{{row[column.key]}}</td>
         </tr>
       </tbody>
     </table>

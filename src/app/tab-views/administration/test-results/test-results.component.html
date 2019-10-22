@@ -8,11 +8,11 @@
     </app-list>
   </div>
   <div class="col-8">
-    <app-test-results-table
+    <app-table
       [title]="'Результаты'"
-      [columns]="['Дата', 'Результат (%)']"
+      [columns]="[{title: 'Дата', key: 'date'}, {title: 'Результат (%)', key: 'result'}]"
       [data]="[{date: '2019/03/14 20:34:09', result: 50}, {date: '2019/01/14 20:39:09', result: 40}]">
-    </app-test-results-table>
+    </app-table>
   </div>
 </div>
 

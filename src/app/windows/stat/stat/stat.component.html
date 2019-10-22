@@ -1,7 +1,48 @@
-<div class="container">
+<div class="stat-container">
   <div class="row">
     <div class="col-12">
-
+      <app-table
+        [title]="'Количество сооружений по степени разрушения'"
+        [columns]="[
+          {title: 'Тип сооружения', key: 'type'},
+          {title: 'Этажность', key: 'floors'},
+          {title: 'Количество', key: 'count'},
+          {title: 'Слабые', key: 'weak_count'},
+          {title: 'Средние', key: 'medium_count'},
+          {title: 'Сильные', key: 'severe_count'},
+          {title: 'Полные', key: 'full_count'}]"
+        [data]="[
+          {type: 'Жилые', floors: '', count: '', weak_count: 0, medium_count: 0, severe_count: 0, full_count: 0},
+          {type: 'Общественные', floors: '', count: '', weak_count: 0, medium_count: 0, severe_count: 0, full_count: 0},
+          {type: 'Промышленные', floors: '', count: '', weak_count: 0, medium_count: 0, severe_count: 0, full_count: 0},
+          {type: 'Подземные', floors: '', count: '', weak_count: 0, medium_count: 0, severe_count: 0, full_count: 0},
+          {type: 'Убежища', floors: '', count: '', weak_count: 0, medium_count: 0, severe_count: 0, full_count: 0}]">
+      </app-table>
+    </div>
+  </div>
+  <div class="row mt-4">
+    <div class="col-12">
+      <app-table
+        [title]="'Количество сооружений по бальности'"
+        [columns]="[
+          {title: 'Тип сооружения', key: 'type'},
+          {title: 'Этажность', key: 'floors'},
+          {title: 'Количество', key: 'count'},
+          {title: '5', key: 'count_5'},
+          {title: '6', key: 'count_6'},
+          {title: '7', key: 'count_7'},
+          {title: '8', key: 'count_8'},
+          {title: '9', key: 'count_9'},
+          {title: '10', key: 'count_10'},
+          {title: '11', key: 'count_11'},
+          {title: '12', key: 'count_12'}]"
+        [data]="[
+          {type: 'Жилые', floors: '', count: '', weak_count: 0, medium_count: 0, severe_count: 0, full_count: 0},
+          {type: 'Общественные', floors: '', count: '', weak_count: 0, medium_count: 0, severe_count: 0, full_count: 0},
+          {type: 'Промышленные', floors: '', count: '', weak_count: 0, medium_count: 0, severe_count: 0, full_count: 0},
+          {type: 'Подземные', floors: '', count: '', weak_count: 0, medium_count: 0, severe_count: 0, full_count: 0},
+          {type: 'Убежища', floors: '', count: '', weak_count: 0, medium_count: 0, severe_count: 0, full_count: 0}]">
+      </app-table>
     </div>
   </div>
 </div>

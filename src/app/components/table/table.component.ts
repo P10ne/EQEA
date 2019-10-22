@@ -1,13 +1,18 @@
 import {Component, Input, OnInit} from '@angular/core';
 
+export interface ITableCols {
+  title: string;
+  key: string;
+}
+
 @Component({
-  selector: 'app-test-results-table',
+  selector: 'app-table',
   templateUrl: './table.component.html',
   styleUrls: ['./table.component.scss']
 })
 export class TableComponent implements OnInit {
   @Input() title: string;
-  @Input() columns: string[];
+  @Input() columns: ITableCols[];
   @Input() data: any[];
   rowKeys: string[];
 
@@ -16,7 +21,6 @@ export class TableComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.rowKeys = Object.keys(this.data[0]);
   }
 
 }
