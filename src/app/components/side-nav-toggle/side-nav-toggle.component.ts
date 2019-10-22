@@ -1,4 +1,4 @@
-import {Component, OnInit, Output} from '@angular/core';
+import {Component, Input, OnInit, Output} from '@angular/core';
 import {EventEmitter} from '@angular/core';
 
 @Component({
@@ -7,7 +7,7 @@ import {EventEmitter} from '@angular/core';
   styleUrls: ['./side-nav-toggle.component.scss']
 })
 export class SideNavToggleComponent implements OnInit {
-  isOpen = false;
+  @Input() isOpen = false;
   @Output() sideNavOpenEmitter = new EventEmitter<boolean>();
   constructor() { }
 

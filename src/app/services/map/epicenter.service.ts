@@ -18,10 +18,9 @@ export class EpicenterService {
     if (this.epicenter && this.epicenter.coords[0] === coords[0] && this.epicenter.coords[1] === coords[1]) {
       return this.epicenter;
     } else {
-      const transformatedCoords = transform(coords, 'EPSG:3857', 'EPSG:4326');
-      const turfPoint = Turf.point(transformatedCoords);
+      const turfPoint = Turf.point(coords);
       this.epicenter = {
-        coords: transformatedCoords,
+        coords: coords,
         turfPoint: turfPoint,
         olPoint: this.format.readFeature(turfPoint)
       };

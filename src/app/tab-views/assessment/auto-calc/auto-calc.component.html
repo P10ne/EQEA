@@ -21,17 +21,17 @@
     <app-accordion [title]="'Изо-данные'" [id]="'autoCalcTab__isodata'">
       <div class="form-check">
         <label class="form-check-label">
-          <input type="checkbox" class="form-check-input" value="" checked [attr.data-source-name-val]="1" (change)="layerCheckboxChangeHandler($event)"> Изосейсты
+          <input type="checkbox" class="form-check-input" value="" checked [attr.data-source-name-val]="'isoLines'" (change)="layerCheckboxChangeHandler($event)"> Изосейсты
         </label>
       </div>
       <div class="form-check">
         <label class="form-check-label">
-          <input type="checkbox" class="form-check-input" value="" checked [attr.data-source-name-val]="2" (change)="layerCheckboxChangeHandler($event)"> Зоны бальности
+          <input type="checkbox" class="form-check-input" value="" checked [attr.data-source-name-val]="'isoAreas'" (change)="layerCheckboxChangeHandler($event)"> Зоны бальности
         </label>
       </div>
       <div class="form-check">
         <label class="form-check-label">
-          <input type="checkbox" class="form-check-input" value="" checked [attr.data-source-name-val]="3" (change)="layerCheckboxChangeHandler($event)"> Эпицентр
+          <input type="checkbox" class="form-check-input" value="" checked [attr.data-source-name-val]="'epicenter'" (change)="layerCheckboxChangeHandler($event)"> Эпицентр
         </label>
       </div>
     </app-accordion>
@@ -60,7 +60,7 @@
 
 <app-toolbar [title]="'Расчет по карте'">
   <li class="toolbar__item">
-    <app-side-nav-toggle (sideNavOpenEmitter)="setSideNavState($event)"></app-side-nav-toggle>
+    <app-side-nav-toggle [isOpen]="sideNavIsOpen" (sideNavOpenEmitter)="setSideNavState($event)"></app-side-nav-toggle>
   </li>
   <li class="toolbar__item">
     <app-back-btn></app-back-btn>

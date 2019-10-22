@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 
 import {MapService} from '../../services/map/map.service';
 import {MathService} from './services/math.service';
-import {SourceNamesEnum} from './enums/sourceNames.enum';
 import {ElectronService} from '../../core/services';
 
 @Component({

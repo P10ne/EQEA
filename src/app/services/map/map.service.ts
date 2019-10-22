@@ -1,5 +1,4 @@
-import { Injectable } from '@angular/core';
-
+import {EventEmitter, Injectable} from '@angular/core';
 import 'ol/ol.css';
 import {Map, View} from 'ol';
 import TileLayer from 'ol/layer/Tile';
@@ -9,7 +8,6 @@ import {GeoJSON} from 'ol/format';
 import {Vector} from 'ol/source';
 import {transform} from 'ol/proj';
 import {EpicenterInterface} from '../../tab-views/assessment/interfaces/epicenter.interface';
-import {SourceNamesEnum} from '../../tab-views/assessment/enums/sourceNames.enum';
 import {IsolinesService} from './isolines.service';
 import {IsoareasService} from './isoareas.service';
 import {EpicenterService} from './epicenter.service';
@@ -21,37 +19,31 @@ import {getIsoLineStyle} from './labels.styles';
 })
 export class MapService {
   map: Map;
-  epicenter: EpicenterInterface;
   layers;
   sources;
   format;
+  epicenterSeted = new EventEmitter<[number, number]>();
   constructor(private isoLinesService: IsolinesService,
               private isoAreasService: IsoareasService,
               private epicenterService: EpicenterService) { }
 
-  initMap(): void {
+  initMap({center = [88, 58], zoom = 4}): void {
 
     this.sources = [
-      new OSM(), // Тайлы карт
-      new Vector(), // Изосейсты
-      new Vector(), // Зоны бальности
-      new Vector() // Эпицентр
-    ]
+      new OSM() // Тайлы карт
+    ];
 
     // В соответствии с sources
     this.layers = [
-      new TileLayer({ source: this.sources[SourceNamesEnum.tiles] }),
-      new VectorLayer({source: this.sources[SourceNamesEnum.isoLines], style: getIsoLineStyle}),
-      new VectorLayer({source: this.sources[SourceNamesEnum.isoAreas]}),
-      new VectorLayer({source: this.sources[SourceNamesEnum.epicenter]})
+      new TileLayer({ source: this.sources[0] })
     ];
 
     this.map = new Map({
       target: 'map',
       layers: this.layers,
       view: new View({
-        center: transform([88, 58], 'EPSG:4326', 'EPSG:3857'),
-        zoom: 4
+        center: transform(center, 'EPSG:4326', 'EPSG:3857'),
+        zoom: zoom
       })
     });
     this.format = new GeoJSON();
@@ -64,13 +56,18 @@ export class MapService {
   setEpicenter = (event) => {
     this.map.removeEventListener('click', this.setEpicenter);
     this.reset();
-    const epicenter = this.epicenterService.getEpicenter(event.coordinate);
-    this.sources[SourceNamesEnum.epicenter].addFeature(epicenter.olPoint);
-
-    this.createIsoLines();
-    this.createIsoAreas();
+    this.epicenterSeted.emit(transform(event.coordinate, 'EPSG:3857', 'EPSG:4326'));
   }
 
+  addLayer(features) {
+    const vectorSource = new Vector();
+    const vectorLayer = new VectorLayer({source: vectorSource});
+    vectorSource.addFeatures(features);
+    this.map.addLayer(vectorLayer);
+    return {source: vectorSource, layer: vectorLayer};
+  }
+
+  /*
   createIsoLines() {
     const isoLineFeatures = this.isoLinesService.getOLIsoLines({coords: this.epicenterService.getCurrentCoords(), depth: 0, magnitude: 0});
     this.sources[SourceNamesEnum.isoLines].addFeatures(isoLineFeatures);
@@ -80,8 +77,7 @@ export class MapService {
     const isoAreaFeatures = this.isoAreasService.getOLIsoAreas({coords: this.epicenterService.getCurrentCoords(), depth: 0, magnitude: 0});
     this.sources[SourceNamesEnum.isoAreas].addFeatures(isoAreaFeatures);
   }
-
-
+  */
 
   reset() {
     this.resetEpicenter();
@@ -89,23 +85,18 @@ export class MapService {
     this.resetIsoAreas();
   }
   resetEpicenter() {
-    this.sources[SourceNamesEnum.epicenter].clear();
-    this.epicenter = null;
+    // this.sources[SourceNamesEnum.epicenter].clear();
   }
   resetIsoLines() {
-    this.sources[SourceNamesEnum.isoLines].clear();
+   // this.sources[SourceNamesEnum.isoLines].clear();
   }
   resetIsoAreas() {
-    this.sources[SourceNamesEnum.isoAreas].clear();
+   // this.sources[SourceNamesEnum.isoAreas].clear();
   }
 
-
-
-  setLayerVisibleState(layer: SourceNamesEnum, state: boolean) {
+  setLayerVisibleState(layer: number, state: boolean) {
     this.layers[layer].setVisible(state);
     this.layers[layer].changed();
   }
-
-
 
 }
