@@ -1,18 +1,13 @@
-<div *ngIf="hasSearch" class="form-group m-1">
-  <input type="text" class="form-control" placeholder="Поиск">
-</div>
 <ul class="list-group">
   <li *ngFor="let item of listData" class="list-group-item list-group-item-action border-0">
-    <app-list-item
+    <app-editable-test-list-item
       [id]="item.id || item.title"
       [title]="item.title"
-      [isSelectable]="item.hasOwnProperty('isSelectable') ? item.isSelectable : isListSelectable"
       [isEditable]="item.hasOwnProperty('isEditable') ? item.isEditable : isListEditable"
       [isDeletable]="item.hasOwnProperty('isDeletable') ? item.isDeletable : isListDeletable"
-      [isSelected]="item.isSelected"
       (editEmitter)="onEdited($event)"
       (deleteEmitter)="onDeleted($event)"
-      (selectEmitter)="onSelected($event)">
-    </app-list-item>
+      [isRight]="item.isRight">
+    </app-editable-test-list-item>
   </li>
 </ul>

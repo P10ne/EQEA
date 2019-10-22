@@ -1,5 +1,14 @@
 import {Component, ElementRef, EventEmitter, Input, OnInit, Output, ViewChild} from '@angular/core';
 
+export interface IListItem {
+  id?: string;
+  title: string;
+  isSelected?: boolean;
+  isEditable?: boolean;
+  isSelectable?: boolean;
+  isDeletable?: boolean;
+}
+
 @Component({
   selector: 'app-list-item',
   templateUrl: './list-item.component.html',

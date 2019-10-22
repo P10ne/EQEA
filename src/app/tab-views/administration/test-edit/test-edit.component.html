@@ -3,29 +3,13 @@
     <div class="card">
       <div class="card-header">Задания</div>
       <div class="card-body">
-        <ul class="list-group">
-          <li class="list-group-item list-group-item-action border-0 tasks__item-container">
-            <app-list-item
-              [title]="'Задание 1'"
-              [isSelectable]="true"
-              [isDeletable]="true">
-            </app-list-item>
-          </li>
-          <li class="list-group-item list-group-item-action border-0 tasks__item-container">
-            <app-list-item
-              [title]="'Задание 2'"
-              [isSelectable]="true"
-              [isDeletable]="true">
-            </app-list-item>
-          </li>
-          <li class="list-group-item list-group-item-action border-0 tasks__item-container">
-            <app-list-item
-              [title]="'Задание 3'"
-              [isSelectable]="true"
-              [isDeletable]="true">
-            </app-list-item>
-          </li>
-        </ul>
+        <app-list
+          [isListDeletable]="true"
+          [isListSelectable]="true"
+          [listData]="data"
+          (selectEmitter)="onSel($event)"
+        >
+        </app-list>
       </div>
       <div class="card-footer d-flex justify-content-end">
         <button class="btn btn-outline-primary">+</button>
@@ -40,28 +24,12 @@
     </div>
     <div class="form-group">
       <label for="comment">Варианты ответов:</label>
-      <ul class="list-group border">
-        <li class="list-group-item list-group-item-action border-0 answers__item-container">
-          <app-editable-test-list-item
-            [title]="'Ответ 1'">
-          </app-editable-test-list-item>
-        </li>
-        <li class="list-group-item list-group-item-action border-0 answers__item-container">
-          <app-editable-test-list-item
-            [title]="'Ответ 2'">
-          </app-editable-test-list-item>
-        </li>
-        <li class="list-group-item list-group-item-action border-0 answers__item-container">
-          <app-editable-test-list-item
-            [title]="'Ответ 3'">
-          </app-editable-test-list-item>
-        </li>
-        <li class="list-group-item list-group-item-action border-0 answers__item-container">
-          <app-editable-test-list-item
-            [title]="'Ответ 4'">
-          </app-editable-test-list-item>
-        </li>
-      </ul>
+      <app-editable-test-list
+        [isListDeletable]="true"
+        [isListEditable]="true"
+        [listData]="[{title: 'Ответ 1'}, {title: 'Ответ 2', isRight: true}, {title: 'Ответ 3'}]"
+      >
+      </app-editable-test-list>
       <div class="row">
         <div class="col-12 d-flex justify-content-end mt-2">
           <button class="btn btn-outline-primary">+</button>

@@ -39,6 +39,7 @@ import { MainComponent } from './windows/main/main.component';
 import { StatLayoutComponent } from './windows/stat/stat-layout.component';
 import { StatComponent } from './windows/stat/stat/stat.component';
 import { ListComponent } from './components/list/list.component';
+import { EditableTestListComponent } from './components/editable-test-list/editable-test-list.component';
 
 const testsRoutes = [
   {path: '', component: MainTestsComponent, outlet: 'testOutlet'},
@@ -112,7 +113,8 @@ const routes: Routes = [
     MainComponent,
     StatLayoutComponent,
     StatComponent,
-    ListComponent
+    ListComponent,
+    EditableTestListComponent
   ],
   imports: [
     BrowserModule,
