@@ -1,16 +1,11 @@
 <div class="row container--mt-toolbar">
   <div class="col-4">
-    <div class="card">
-      <div class="card-header">Студенты</div>
-      <div class="card-body">
-        <app-list
-          [isListSelectable]="true"
-          [listData]="data"
-          (selectEmitter)="onSel($event)"
-        >
-        </app-list>
-      </div>
-    </div>
+    <app-list
+      [title]="'Студенты'"
+      [isListSelectable]="true"
+      [listData]="data"
+      (selectEmitter)="onSel($event)">
+    </app-list>
   </div>
   <div class="col-8">
     <app-test-results-table

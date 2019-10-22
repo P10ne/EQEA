@@ -66,7 +66,11 @@
     <app-back-btn></app-back-btn>
   </li>
   <li class="toolbar__item">
-    <button class="btn" (click)="openStat()">Отчет</button>
+    <button class="btn" (click)="openStat()">
+      <svg class="toolbar__item-svg">
+        <use xlink:href="#statIcon"></use>
+      </svg>
+    </button>
   </li>
 </app-toolbar>
 

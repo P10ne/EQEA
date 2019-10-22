@@ -1,13 +1,25 @@
-<ul class="list-group">
-  <li *ngFor="let item of listData" class="list-group-item list-group-item-action border-0">
-    <app-editable-test-list-item
-      [id]="item.id || item.title"
-      [title]="item.title"
-      [isEditable]="item.hasOwnProperty('isEditable') ? item.isEditable : isListEditable"
-      [isDeletable]="item.hasOwnProperty('isDeletable') ? item.isDeletable : isListDeletable"
-      (editEmitter)="onEdited($event)"
-      (deleteEmitter)="onDeleted($event)"
-      [isRight]="item.isRight">
-    </app-editable-test-list-item>
-  </li>
-</ul>
+<div class="card">
+  <div class="card-header d-flex justify-content-between">
+    <span class="card-header__title">{{title}}</span>
+    <div class="card-header__tools d-flex">
+      <div *ngIf="hasAddBtn">
+        <button class="btn btn-sm">+</button>
+      </div>
+    </div>
+  </div>
+  <div class="card-body">
+    <ul class="list-group">
+      <li *ngFor="let item of listData" class="list-group-item list-group-item-action border-0">
+        <app-editable-test-list-item
+          [id]="item.id || item.title"
+          [title]="item.title"
+          [isEditable]="item.hasOwnProperty('isEditable') ? item.isEditable : isListEditable"
+          [isDeletable]="item.hasOwnProperty('isDeletable') ? item.isDeletable : isListDeletable"
+          (editEmitter)="onEdited($event)"
+          (deleteEmitter)="onDeleted($event)"
+          [isRight]="item.isRight">
+        </app-editable-test-list-item>
+      </li>
+    </ul>
+  </div>
+</div>

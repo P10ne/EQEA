@@ -12,6 +12,8 @@ export class ListComponent implements OnInit {
   @Input() isListDeletable: boolean;
   @Input() isListSelectable: boolean;
   @Input() isListEditable: boolean;
+  @Input() title: string;
+  @Input() hasAddBtn: boolean;
 
   @Output() selectEmitter = new EventEmitter<IListItem[]>();
   @Output() editEmitter = new EventEmitter<IListItem[]>();

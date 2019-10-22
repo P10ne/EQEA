@@ -26,5 +26,9 @@
   }
   &__item {
     margin: 0 5px;
+    &-svg {
+      width: 37px;
+      height: 31px;
+    }
   }
 }

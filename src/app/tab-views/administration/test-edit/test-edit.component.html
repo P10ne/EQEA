@@ -1,41 +1,31 @@
 <div class="row container--mt-toolbar">
   <div class="col-4">
-    <div class="card">
-      <div class="card-header">Задания</div>
-      <div class="card-body">
-        <app-list
-          [isListDeletable]="true"
-          [isListSelectable]="true"
-          [listData]="data"
-          (selectEmitter)="onSel($event)"
-        >
-        </app-list>
-      </div>
-      <div class="card-footer d-flex justify-content-end">
-        <button class="btn btn-outline-primary">+</button>
-      </div>
-    </div>
+    <app-list
+      [title]="'Задания'"
+      [hasAddBtn]="true"
+      [isListDeletable]="true"
+      [isListSelectable]="true"
+      [listData]="data"
+      (selectEmitter)="onSel($event)">
+    </app-list>
   </div>
 
   <div class="col-8">
-    <div class="form-group">
-      <label for="comment">Постановка:</label>
-      <textarea class="form-control" rows="2" id="comment"></textarea>
-    </div>
-    <div class="form-group">
-      <label for="comment">Варианты ответов:</label>
-      <app-editable-test-list
-        [isListDeletable]="true"
-        [isListEditable]="true"
-        [listData]="[{title: 'Ответ 1'}, {title: 'Ответ 2', isRight: true}, {title: 'Ответ 3'}]"
-      >
-      </app-editable-test-list>
-      <div class="row">
-        <div class="col-12 d-flex justify-content-end mt-2">
-          <button class="btn btn-outline-primary">+</button>
+    <div class="card mb-4">
+      <div class="card-header">Постановка вопроса</div>
+      <div class="card-body">
+        <div class="form-group">
+          <textarea class="form-control" rows="2" id="comment"></textarea>
         </div>
       </div>
     </div>
+    <app-editable-test-list
+      [title]="'Варианты ответов'"
+      [hasAddBtn]="true"
+      [isListDeletable]="true"
+      [isListEditable]="true"
+      [listData]="[{title: 'Ответ 1'}, {title: 'Ответ 2', isRight: true}, {title: 'Ответ 3'}]">
+    </app-editable-test-list>
   </div>
 </div>
 

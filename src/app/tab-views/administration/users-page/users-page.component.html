@@ -2,44 +2,18 @@
   <div class="col-6">
     <div class="accordion">
       <app-accordion [title]="'Студенты'" [id]="'usersPageTab__students'">
-        <div class="card">
-          <div class="card-body">
-            <div class="form-group m-1">
-              <input type="text" class="form-control" placeholder="Поиск">
-            </div>
-            <ul class="list-group">
-              <li class="list-group-item list-group-item-action border-0">
-                <app-list-item [title]="'Иванов Иван Иванович'" [isDeletable]="true"></app-list-item>
-              </li>
-              <li class="list-group-item list-group-item-action border-0">
-                <app-list-item [title]="'Иванов Иван Иванович'" [isDeletable]="true"></app-list-item>
-              </li>
-              <li class="list-group-item list-group-item-action border-0">
-                <app-list-item [title]="'Иванов Иван Иванович'" [isDeletable]="true"></app-list-item>
-              </li>
-            </ul>
-          </div>
-        </div>
+        <app-list
+          [hasSearch]="true"
+          [isListSelectable]="true"
+          [listData]="students">
+        </app-list>
       </app-accordion>
       <app-accordion [title]="'Преподаватели'" [id]="'usersPageTab__teachers'">
-        <div class="card">
-          <div class="card-body">
-            <div class="form-group m-1">
-              <input type="text" class="form-control" placeholder="Поиск">
-            </div>
-            <ul class="list-group">
-              <li class="list-group-item list-group-item-action border-0">
-                <app-list-item [title]="'Иванов Иван Иванович'" [isDeletable]="true"></app-list-item>
-              </li>
-              <li class="list-group-item list-group-item-action border-0">
-                <app-list-item [title]="'Иванов Иван Иванович'" [isDeletable]="true"></app-list-item>
-              </li>
-              <li class="list-group-item list-group-item-action border-0">
-                <app-list-item [title]="'Иванов Иван Иванович'" [isDeletable]="true"></app-list-item>
-              </li>
-            </ul>
-          </div>
-        </div>
+        <app-list
+          [hasSearch]="true"
+          [isListSelectable]="true"
+          [listData]="teachers">
+        </app-list>
       </app-accordion>
     </div>
   </div>
