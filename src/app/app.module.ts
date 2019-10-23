@@ -39,6 +39,7 @@ import { StatLayoutComponent } from './windows/stat/stat-layout.component';
 import { StatComponent } from './windows/stat/stat/stat.component';
 import { ListComponent } from './components/list/list.component';
 import { EditableTestListComponent } from './components/editable-test-list/editable-test-list.component';
+import { OLPopupComponent } from './components/olpopup/olpopup.component';
 
 const testsRoutes = [
   {path: '', component: MainTestsComponent, outlet: 'testOutlet'},
@@ -112,7 +113,8 @@ const routes: Routes = [
     StatLayoutComponent,
     StatComponent,
     ListComponent,
-    EditableTestListComponent
+    EditableTestListComponent,
+    OLPopupComponent
   ],
   imports: [
     BrowserModule,
@@ -123,6 +125,7 @@ const routes: Routes = [
     BrowserAnimationsModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [OLPopupComponent]
 })
 export class AppModule {}

@@ -1,11 +1,14 @@
-import { Component, OnInit } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  ViewChild
+} from '@angular/core';
 import {ElectronService} from '../../../core/services';
 import {MapService} from '../../../services/map/map.service';
 import {IsolinesService} from '../../../services/map/isolines.service';
 import {IsoareasService} from '../../../services/map/isoareas.service';
 import {EpicenterService} from '../../../services/map/epicenter.service';
-import {MathService} from '../../../tab-views/assessment/services/math.service';
-import {BuildingsService} from '../../../services/map/buildings.service';
+import {OverlaysService} from '../../../services/map/overlays.service';
 
 @Component({
   selector: 'app-stat',
@@ -15,12 +18,13 @@ import {BuildingsService} from '../../../services/map/buildings.service';
 })
 export class StatComponent implements OnInit {
 
+  addingTimeMarkActive = false;
+  @ViewChild('olPopupTemplate', {static: true}) olPopup;
+
   constructor(
     private electronService: ElectronService,
     private assessmentService: MapService,
-    private epicenterService: EpicenterService,
-    private isoLinesService: IsolinesService,
-    private isoAreaService: IsoareasService
+    private overlayService: OverlaysService
   ) {}
 
   ngOnInit() {
@@ -35,6 +39,16 @@ export class StatComponent implements OnInit {
     this.assessmentService.initMap({});
   }
 
-
+  addTimeMarkBtnClk() {
+    this.addingTimeMarkActive ?
+    this.assessmentService.map.removeEventListener('click', this.addTimeMarkHandler) :
+    this.assessmentService.map.addEventListener('click', this.addTimeMarkHandler);
+  }
+  addTimeMarkHandler = (evt) => {
+    const timeMarkOverlay = this.overlayService.createTimeMarkOverlay('12:30', this.olPopup);
+    timeMarkOverlay.setPosition(evt.coordinate);
+    console.log(timeMarkOverlay);
+    this.assessmentService.addOverlay(timeMarkOverlay);
+  }
 
 }

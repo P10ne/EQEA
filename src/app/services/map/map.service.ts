@@ -19,6 +19,7 @@ export class MapService {
   map: Map;
   layers;
   sources;
+  overlays;
   format;
   epicenterSeted = new EventEmitter<[number, number]>();
   constructor(private isoLinesService: IsolinesService,
@@ -61,5 +62,13 @@ export class MapService {
     vectorSource.addFeatures(features);
     this.map.addLayer(vectorLayer);
     return {source: vectorSource, layer: vectorLayer};
+  }
+
+  addOverlay(overlay) {
+    this.map.addOverlay(overlay);
+  }
+
+  removeOverlay(overlay) {
+    this.map.removeOverlay(overlay);
   }
 }
