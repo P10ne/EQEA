@@ -14,8 +14,7 @@ export class TestItemComponent implements OnInit {
   selectedAnswerId;
 
   getAnswerItemColor(index): string {
-    console.log('log');
-    if (!this.showAnswers) return '#fff';
+    if (!this.showAnswers) { return '#fff'; }
     switch (this.getAnswerState(index)) {
       case TestItemAnswerStateEnum.unknown: return '#fff'; break;
       case TestItemAnswerStateEnum.correct: return '#28a745'; break;

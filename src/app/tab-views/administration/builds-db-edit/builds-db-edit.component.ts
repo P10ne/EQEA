@@ -1,19 +1,17 @@
 import { Component, OnInit } from '@angular/core';
+import {MapService} from '../../../services/map/map.service';
 
 @Component({
   selector: 'app-builds-db-edit',
   templateUrl: './builds-db-edit.component.html',
-  styleUrls: ['./builds-db-edit.component.scss']
+  styleUrls: ['./builds-db-edit.component.scss'],
+  providers: [MapService]
 })
 export class BuildsDbEditComponent implements OnInit {
 
-  showMenu = false;
-  constructor() { }
+  constructor(private assessmentService: MapService) { }
 
   ngOnInit() {
-  }
-
-  toggleMenu() {
-    this.showMenu = !this.showMenu;
+    this.assessmentService.initMap({});
   }
 }

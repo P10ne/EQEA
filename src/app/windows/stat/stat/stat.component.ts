@@ -37,6 +37,9 @@ export class StatComponent implements OnInit {
     this.electronService.ipcRenderer.send('initStat');
 
     this.assessmentService.initMap({});
+    this.overlayService.overlayCloseEmitter.subscribe((overlay) => {
+      this.assessmentService.removeOverlay(overlay);
+    });
   }
 
   addTimeMarkBtnClk() {

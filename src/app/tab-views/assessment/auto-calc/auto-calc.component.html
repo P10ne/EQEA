@@ -66,8 +66,15 @@
     <app-back-btn></app-back-btn>
   </li>
   <li class="toolbar__item">
-    <button class="btn" (click)="openStat()">
-      <svg class="toolbar__item-svg">
+    <button class="btn p-1">
+      <svg class="svg toolbar__item-svg">
+        <use xlink:href="#timerIcon"></use>
+      </svg>
+    </button>
+  </li>
+  <li class="toolbar__item">
+    <button class="btn p-1" (click)="openStat()">
+      <svg class="svg toolbar__item-svg">
         <use xlink:href="#statIcon"></use>
       </svg>
     </button>

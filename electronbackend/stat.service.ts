@@ -8,7 +8,7 @@ export default class ElStatService {
       this.statWin = new BrowserWindow({
         x: 0,
         y: 0,
-        width: 900,
+        width: 995,
         height: 900,
         webPreferences: {
           nodeIntegration: true,

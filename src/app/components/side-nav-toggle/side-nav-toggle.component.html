@@ -1,5 +1,6 @@
-<span class="toggle-button" [class.button-open]="isOpen" (click)="toggleMenu()">
-   <div class="menu-bar menu-bar-top"></div>
-   <div class="menu-bar menu-bar-middle"></div>
-   <div class="menu-bar menu-bar-bottom"></div>
-</span>
+<button class="btn" (click)="toggleMenu()">
+  <svg class="svg svg--sidenavIcon">
+    <use *ngIf="!isOpen" xlink:href="#sidenavIcon"></use>
+    <use *ngIf="isOpen" xlink:href="#closeIcon"></use>
+  </svg>
+</button>

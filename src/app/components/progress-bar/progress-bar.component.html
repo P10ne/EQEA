@@ -1,0 +1,7 @@
+<div *ngIf="isActive" class="progress-form" [ngStyle]="positionStyle">
+  <span class="progress__message">{{message}}</span>
+  <div class="progress">
+    <div class="progress-bar progress-bar-striped progress-bar-animated" [ngStyle]="{width: width}"></div>
+  </div>
+</div>
+

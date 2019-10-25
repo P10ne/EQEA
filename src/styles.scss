@@ -24,5 +24,15 @@ body {
   margin-top: 60px;
 }
 
+.svg {
+  width: 30px;
+  height: 30px;
+  fill: #999;
+}
+.btn:focus {
+  box-shadow: none;
+}
+
+
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

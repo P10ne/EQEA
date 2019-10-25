@@ -3,12 +3,13 @@
   background-color: white;
   -webkit-filter: drop-shadow(0 1px 4px rgba(0,0,0,0.2));
   filter: drop-shadow(0 1px 4px rgba(0,0,0,0.2));
-  padding: 15px;
+  padding: 5px 8px;
+  padding-right: 25px;
   border-radius: 10px;
   border: 1px solid #cccccc;
   bottom: 12px;
   left: -50px;
-  min-width: 280px;
+  min-width: 190px;
 
   &:after, &:before {
     top: 100%;
@@ -36,12 +37,13 @@
     position: absolute;
     top: 2px;
     right: 8px;
+    cursor: pointer;
     &:after {
       content: "✖";
     }
   }
   &-content {
-    padding: 5px 25px 5px 10px;
+
   }
 }
 .textrow {

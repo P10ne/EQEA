@@ -40,6 +40,7 @@ import { StatComponent } from './windows/stat/stat/stat.component';
 import { ListComponent } from './components/list/list.component';
 import { EditableTestListComponent } from './components/editable-test-list/editable-test-list.component';
 import { OLPopupComponent } from './components/olpopup/olpopup.component';
+import { ProgressBarComponent } from './components/progress-bar/progress-bar.component';
 
 const testsRoutes = [
   {path: '', component: MainTestsComponent, outlet: 'testOutlet'},
@@ -114,7 +115,8 @@ const routes: Routes = [
     StatComponent,
     ListComponent,
     EditableTestListComponent,
-    OLPopupComponent
+    OLPopupComponent,
+    ProgressBarComponent
   ],
   imports: [
     BrowserModule,

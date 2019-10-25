@@ -1,19 +1,43 @@
 <div id="map" style="width:100%; height:100%; position: relative;">
-  <span class="toggle-button" [class.button-open]="showMenu" (click)="toggleMenu()">
-     <div class="menu-bar menu-bar-top"></div>
-     <div class="menu-bar menu-bar-middle"></div>
-     <div class="menu-bar menu-bar-bottom"></div>
-  </span>
-
-  <div class="menu-wrap" [class.menu-show]="showMenu">
-    <div class="menu-sidebar">
-
-    </div>
-  </div>
 </div>
 
 <app-toolbar [title]="'Редактирование базы данных сооружений'">
   <li class="toolbar__item">
     <app-back-btn></app-back-btn>
+  </li>
+  <li class="toolbar__item">
+    <button type="button" class="btn btn-sm stat-toolbar__item dropdown-button">
+      <svg class="svg stat-toolbar__item-svg">
+        <use xlink:href="#layersIcon"></use>
+      </svg>
+      <div class="dropdown-m">
+        <div class="form-check">
+          <label class="form-check-label">
+            <input type="checkbox" class="form-check-input" value="">Жилые
+          </label>
+        </div>
+        <div class="form-check">
+          <label class="form-check-label">
+            <input type="checkbox" class="form-check-input" value="">Общественные
+          </label>
+        </div>
+        <div class="form-check">
+          <label class="form-check-label">
+            <input type="checkbox" class="form-check-input" value="">Промышленные
+          </label>
+        </div>
+      </div>
+    </button>
+  </li>
+  <li class="toolbar__item">
+    <button type="button" class="btn btn-sm stat-toolbar__item dropdown-button">
+      <svg class="svg stat-toolbar__item-svg">
+        <use xlink:href="#createIcon"></use>
+      </svg>
+      <div class="dropdown-m">
+        <button class="btn btn-sm">Точка</button>
+        <button class="btn btn-sm">Полигон</button>
+      </div>
+    </button>
   </li>
 </app-toolbar>

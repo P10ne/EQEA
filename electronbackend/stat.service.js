@@ -10,7 +10,7 @@ var ElStatService = /** @class */ (function () {
             _this.statWin = new electron_1.BrowserWindow({
                 x: 0,
                 y: 0,
-                width: 900,
+                width: 995,
                 height: 900,
                 webPreferences: {
                     nodeIntegration: true,

@@ -1,4 +1,4 @@
-import {ComponentFactoryResolver, ComponentRef, Injectable, ReflectiveInjector} from '@angular/core';
+import {ComponentFactoryResolver, ComponentRef, EventEmitter, Injectable, ReflectiveInjector} from '@angular/core';
 import {Overlay} from 'ol';
 import {OLPopupComponent} from '../../components/olpopup/olpopup.component';
 
@@ -6,7 +6,8 @@ import {OLPopupComponent} from '../../components/olpopup/olpopup.component';
   providedIn: 'root'
 })
 export class OverlaysService {
-
+  overlayCloseEmitter = new EventEmitter();
+  overlay = null;
   constructor(
     private componentFactoryResolver: ComponentFactoryResolver
   ) { }
@@ -17,11 +18,16 @@ export class OverlaysService {
     const comp = factory.create(injector);
     comp.location.nativeElement.querySelector('.firstWave').innerText = '12:30';
     comp.location.nativeElement.querySelector('.secondWave').innerText = '12:42';
-    const timeMarkOverlay = new Overlay({
+    comp.location.nativeElement.querySelector('.ol-popup-closer').addEventListener('click', this.closeOverlay);
+    this.overlay = new Overlay({
       element: comp.location.nativeElement,
       autoPan: true,
       autoPanAnimation: { duration: 250 }
     });
-    return timeMarkOverlay;
+    return this.overlay;
+  }
+
+  closeOverlay = () => {
+    this.overlayCloseEmitter.emit(this.overlay);
   }
 }

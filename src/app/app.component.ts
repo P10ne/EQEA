@@ -1,12 +1,12 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {ProgressBarService} from './services/progress-bar.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
-
+export class AppComponent implements OnInit {
   tabs = {
     theoryTab: {active: true},
     testsTab: {active: false},
@@ -27,7 +27,23 @@ export class AppComponent {
     return this.tabs.administrationTab.active;
   }
 
-  constructor() {}
+  constructor(private progress: ProgressBarService) {}
+
+  ngOnInit(): void {
+    this.progress.update({_progress: 9, _isActive: true, _message: 'Выполнение...'});
+    const f = this.loadd.call(this);
+  }
+
+  loadd() {
+        let val = this.progress._progress;
+        this.progress.update({_progress: ++val});
+        if (val < 100) {
+          setTimeout(this.loadd.bind(this), 70);
+        } else {
+          this.progress.update({_message: 'Выполнено'});
+        }
+  }
+
 
   setActiveTheoryTab() {
     this.setTabsUnactive();

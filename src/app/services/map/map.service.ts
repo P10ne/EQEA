@@ -7,24 +7,15 @@ import OSM from 'ol/source/OSM';
 import {GeoJSON} from 'ol/format';
 import {Vector} from 'ol/source';
 import {transform} from 'ol/proj';
-import {EpicenterInterface} from '../../tab-views/assessment/interfaces/epicenter.interface';
-import {IsolinesService} from './isolines.service';
-import {IsoareasService} from './isoareas.service';
-import {EpicenterService} from './epicenter.service';
-
-import {getIsoLineStyle} from './labels.styles';
 
 @Injectable()
 export class MapService {
   map: Map;
   layers;
   sources;
-  overlays;
   format;
   epicenterSeted = new EventEmitter<[number, number]>();
-  constructor(private isoLinesService: IsolinesService,
-              private isoAreasService: IsoareasService,
-              private epicenterService: EpicenterService) { }
+  constructor() { }
 
   initMap({center = [88, 58], zoom = 4}): void {
 
