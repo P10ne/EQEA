@@ -1,20 +1,23 @@
-<div class="row container--mt-toolbar">
-  <div class="col-4">
-    <app-list
-      [title]="'Студенты'"
-      [isListSelectable]="true"
-      [listData]="data"
-      (selectEmitter)="onSel($event)">
-    </app-list>
-  </div>
-  <div class="col-8">
-    <app-table
-      [title]="'Результаты'"
-      [columns]="[{title: 'Дата', key: 'date'}, {title: 'Результат (%)', key: 'result'}]"
-      [data]="[{date: '2019/03/14 20:34:09', result: 50}, {date: '2019/01/14 20:39:09', result: 40}]">
-    </app-table>
+<div class="container">
+  <div class="row container--mt-toolbar">
+    <div class="col-4">
+      <app-list
+        [title]="'Студенты'"
+        [isListSelectable]="true"
+        [listData]="data"
+        (selectEmitter)="onSel($event)">
+      </app-list>
+    </div>
+    <div class="col-8">
+      <app-table
+        [title]="'Результаты'"
+        [columns]="[{title: 'Дата', key: 'date'}, {title: 'Результат (%)', key: 'result'}]"
+        [data]="[{date: '2019/03/14 20:34:09', result: 50}, {date: '2019/01/14 20:39:09', result: 40}]">
+      </app-table>
+    </div>
   </div>
 </div>
+
 
 <app-toolbar [title]="'Результаты тестов'">
   <li class="toolbar__item">

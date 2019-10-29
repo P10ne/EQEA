@@ -30,19 +30,9 @@ export class AppComponent implements OnInit {
   constructor(private progress: ProgressBarService) {}
 
   ngOnInit(): void {
-    this.progress.update({_progress: 9, _isActive: true, _message: 'Выполнение...'});
-    const f = this.loadd.call(this);
+
   }
 
-  loadd() {
-        let val = this.progress._progress;
-        this.progress.update({_progress: ++val});
-        if (val < 100) {
-          setTimeout(this.loadd.bind(this), 70);
-        } else {
-          this.progress.update({_message: 'Выполнено'});
-        }
-  }
 
 
   setActiveTheoryTab() {

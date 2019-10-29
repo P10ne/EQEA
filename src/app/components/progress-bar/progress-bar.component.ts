@@ -14,10 +14,13 @@ export class ProgressBarComponent implements OnInit {
 
   constructor(private progress: ProgressBarService) {
       this.progress.progressChanged$.subscribe((progressData) => {
-      this.width = `${progressData.progress}%`;
-      this.message = progressData.message;
-      this.isActive = progressData.isActive;
-    });
+        this.width = `${progressData.progress}%`;
+        this.message = progressData.message;
+        this.isActive = progressData.isActive;
+      });
+      this.progress.progressActiveChanged$.subscribe((isActive) => {
+        this.isActive = isActive;
+      });
   }
 
   ngOnInit() {

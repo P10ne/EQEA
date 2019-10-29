@@ -41,48 +41,8 @@ import { ListComponent } from './components/list/list.component';
 import { EditableTestListComponent } from './components/editable-test-list/editable-test-list.component';
 import { OLPopupComponent } from './components/olpopup/olpopup.component';
 import { ProgressBarComponent } from './components/progress-bar/progress-bar.component';
+import {AppRoutingModule} from './app.routing.module';
 
-const testsRoutes = [
-  {path: '', component: MainTestsComponent, outlet: 'testOutlet'},
-  {path: 'exectests', component: ExecTestsComponent, outlet: 'testOutlet'},
-  {path: 'viewtests', component: ViewTestsComponent, outlet: 'testOutlet'}
-];
-const adminRoutes = [
-  {path: '', component: MainAdministrationComponent, outlet: 'adminOutlet'},
-  {path: 'testResults', component: TestResultsComponent, outlet: 'adminOutlet'},
-  {path: 'testEdit', component: TestEditComponent, outlet: 'adminOutlet'},
-  {path: 'buildsDbEdit', component: BuildsDbEditComponent, outlet: 'adminOutlet'},
-  {path: 'referenceDbEdit', component: ReferenceDbEditComponent, outlet: 'adminOutlet'},
-  {path: 'usersPage', component: UsersPageComponent, outlet: 'adminOutlet'}
-];
-const assessmentRoutes = [
-  {path: '', component: SingleCalcComponent, outlet: 'assessmentOutlet'},
-  {path: 'autoCalc', component: AutoCalcComponent, outlet: 'assessmentOutlet'}
-];
-
-const statRoutes = [
-  {path: '', component: StatComponent, outlet: 'statOutlet'}
-];
-
-const routes: Routes = [
-  {
-    path: '', redirectTo: 'main', pathMatch: 'full'
-  },
-  {
-    path: 'main', component: MainComponent,
-    children: [
-      ...testsRoutes,
-      ...adminRoutes,
-      ...assessmentRoutes
-    ]
-  },
-  {
-    path: 'stat', component: StatLayoutComponent,
-    children: [
-      ...statRoutes
-    ]
-  }
-];
 
 @NgModule({
   declarations: [AppComponent,
@@ -123,8 +83,9 @@ const routes: Routes = [
     FormsModule,
     HttpClientModule,
     CoreModule,
-    RouterModule.forRoot(routes, { useHash: true }),
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    AppRoutingModule,
+    RouterModule
   ],
   providers: [],
   bootstrap: [AppComponent],

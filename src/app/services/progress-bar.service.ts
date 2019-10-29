@@ -7,13 +7,22 @@ export class ProgressBarService {
 
   _progress: number;
   _message: string;
-  _isActive = false;
   progressChanged$ = new EventEmitter<object>();
-  update({_progress = this._progress, _message = this._message, _isActive = this._isActive}) {
+  progressActiveChanged$ = new EventEmitter<boolean>();
+
+  update({_progress = this._progress, _message = this._message}) {
     this._progress = _progress;
     this._message = _message;
-    this._isActive = _isActive;
-    this.progressChanged$.emit({progress: this._progress, message: this._message, isActive: this._isActive});
+    this.progressChanged$.emit({progress: this._progress, message: this._message});
+  }
+
+  start() {
+    this.progressChanged$.emit({progress: 0, message: 'Выполнение...'});
+    this.progressActiveChanged$.emit(true);
+  }
+
+  stop() {
+    this.progressActiveChanged$.emit(false);
   }
 
   constructor() { }

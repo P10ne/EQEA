@@ -1,33 +1,36 @@
-<div class="row container--mt-toolbar">
-  <div class="col-4">
-    <app-list
-      [title]="'Задания'"
-      [hasAddBtn]="true"
-      [isListDeletable]="true"
-      [isListSelectable]="true"
-      [listData]="data"
-      (selectEmitter)="onSel($event)">
-    </app-list>
-  </div>
+<div class="container">
+  <div class="row container--mt-toolbar">
+    <div class="col-4">
+      <app-list
+        [title]="'Задания'"
+        [hasAddBtn]="true"
+        [isListDeletable]="true"
+        [isListSelectable]="true"
+        [listData]="data"
+        (selectEmitter)="onSel($event)">
+      </app-list>
+    </div>
 
-  <div class="col-8">
-    <div class="card mb-4">
-      <div class="card-header">Постановка вопроса</div>
-      <div class="card-body">
-        <div class="form-group">
-          <textarea class="form-control" rows="2" id="comment"></textarea>
+    <div class="col-8">
+      <div class="card mb-4">
+        <div class="card-header">Постановка вопроса</div>
+        <div class="card-body">
+          <div class="form-group">
+            <textarea class="form-control" rows="2" id="comment"></textarea>
+          </div>
         </div>
       </div>
+      <app-editable-test-list
+        [title]="'Варианты ответов'"
+        [hasAddBtn]="true"
+        [isListDeletable]="true"
+        [isListEditable]="true"
+        [listData]="[{title: 'Ответ 1'}, {title: 'Ответ 2', isRight: true}, {title: 'Ответ 3'}]">
+      </app-editable-test-list>
     </div>
-    <app-editable-test-list
-      [title]="'Варианты ответов'"
-      [hasAddBtn]="true"
-      [isListDeletable]="true"
-      [isListEditable]="true"
-      [listData]="[{title: 'Ответ 1'}, {title: 'Ответ 2', isRight: true}, {title: 'Ответ 3'}]">
-    </app-editable-test-list>
   </div>
 </div>
+
 
 
 <app-toolbar [title]="'Редактирование тестов'">

@@ -1,23 +1,26 @@
-<div class="row container--mt-toolbar">
-  <div class="col-6">
-    <div class="accordion">
-      <app-accordion [title]="'Студенты'" [id]="'usersPageTab__students'">
-        <app-list
-          [hasSearch]="true"
-          [isListSelectable]="true"
-          [listData]="students">
-        </app-list>
-      </app-accordion>
-      <app-accordion [title]="'Преподаватели'" [id]="'usersPageTab__teachers'">
-        <app-list
-          [hasSearch]="true"
-          [isListSelectable]="true"
-          [listData]="teachers">
-        </app-list>
-      </app-accordion>
+<div class="container">
+  <div class="row container--mt-toolbar">
+    <div class="col-6">
+      <div class="accordion">
+        <app-accordion [title]="'Студенты'" [id]="'usersPageTab__students'">
+          <app-list
+            [hasSearch]="true"
+            [isListSelectable]="true"
+            [listData]="students">
+          </app-list>
+        </app-accordion>
+        <app-accordion [title]="'Преподаватели'" [id]="'usersPageTab__teachers'">
+          <app-list
+            [hasSearch]="true"
+            [isListSelectable]="true"
+            [listData]="teachers">
+          </app-list>
+        </app-accordion>
+      </div>
     </div>
   </div>
 </div>
+
 
 <app-toolbar [title]="'Пользователи системы'">
   <li class="toolbar__item">
