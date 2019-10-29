@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
+import {tabAnim} from '../../animations/app.animations';
 
 @Component({
   selector: 'app-main',
   templateUrl: './main.component.html',
-  styleUrls: ['./main.component.scss']
+  styleUrls: ['./main.component.scss'],
+  animations: [tabAnim()]
 })
 export class MainComponent {
 

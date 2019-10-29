@@ -1,3 +1,3 @@
-<div class="container d-flex flex-column">
+<div [@tabAnimTrigger]="isActive ? 'opened' : 'closed'" class="container d-flex flex-column">
   <router-outlet name="testOutlet"></router-outlet>
 </div>

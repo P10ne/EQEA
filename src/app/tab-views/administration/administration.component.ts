@@ -1,13 +1,15 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {ipcRenderer} from 'electron';
+import {tabAnim} from '../../animations/app.animations';
 
 @Component({
   selector: 'app-administration',
   templateUrl: './administration.component.html',
-  styleUrls: ['./administration.component.scss']
+  styleUrls: ['./administration.component.scss'],
+  animations: [tabAnim()]
 })
 export class AdministrationComponent implements OnInit {
-
+  @Input() isActive;
   constructor() { }
 
   ngOnInit() {

@@ -1,3 +1,3 @@
-<div class="container--administration" style="height:100%;">
+<div [@tabAnimTrigger]="isActive ? 'opened' : 'closed'" class="container--administration" style="height:100%;">
   <router-outlet name="adminOutlet"></router-outlet>
 </div>

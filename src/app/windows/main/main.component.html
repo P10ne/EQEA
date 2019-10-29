@@ -14,8 +14,8 @@
     </li>
   </ul>
 
-  <app-theory [hidden]="!theoryTabIsActive"></app-theory>
-  <app-tests [hidden]="!testsTabIsActive"></app-tests>
-  <app-assessment [hidden]="!assessmentTabIsActive"></app-assessment>
-  <app-administration [hidden]="!administrationTabIsActive"></app-administration>
+  <app-theory [isActive]="theoryTabIsActive"></app-theory>
+  <app-tests [isActive]="testsTabIsActive"></app-tests>
+  <app-assessment [isActive]="assessmentTabIsActive"></app-assessment>
+  <app-administration [isActive]="administrationTabIsActive"></app-administration>
 </div>
