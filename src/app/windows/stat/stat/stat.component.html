@@ -47,6 +47,20 @@
   </div>
   <div class="row mt-4">
     <div class="col-12">
+      <app-table
+        [title]="'Человеческие потери'"
+        [columns]="[
+            {title: 'Общие', key: 'common'},
+            {title: 'Безвозвратные', key: 'irrevocable'},
+            {title: 'Санитарные', key: 'sanitary'}
+          ]"
+        [data]="[
+          {common: 0, irrevocable: 0, sanitary: 0}]">
+      </app-table>
+    </div>
+  </div>
+  <div class="row mt-4">
+    <div class="col-12">
       <div class="card mb-4">
         <div class="card-header">Карта разрушений</div>
         <div class="card-body p-0">
